@@ -1,0 +1,41 @@
+{
+  "name": "ai-fullstack-generator",
+  "displayName": "AI Full-Stack Generator (GHC)",
+  "description": "Generate full-stack application code from a sketch/image and a detailed prompt using AI.",
+  "version": "1.0.0",
+  "publisher": "YourName",
+  "engines": {
+    "vscode": "^1.80.0"
+  },
+  "categories": [
+    "Other",
+    "Programming Languages"
+  ],
+  "activationEvents": [
+    "onCommand:ghc.openGeneratorPanel"
+  ],
+  "main": "./src/extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "ghc.openGeneratorPanel",
+        "title": "GHC: Open AI Full-Stack Generator"
+      }
+    ]
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run compile",
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./",
+    "pretest": "npm run compile && npm run lint",
+    "lint": "eslint src --ext ts",
+    "test": "vscode-test"
+  },
+  "devDependencies": {
+    "@types/jest": "^30.0.0",
+    "@types/node": "^18.15.0",
+    "@types/vscode": "^1.80.0",
+    "tslint": "^6.1.3",
+    "typescript": "^5.0.0"
+  }
+}

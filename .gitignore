@@ -1,0 +1,6 @@
+dist
+node_modules
+r-net-extension/dist
+r-net-extension/node_modules
+r-net-extension/package-lock.json
+*.vsix
