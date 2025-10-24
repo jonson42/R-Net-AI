@@ -1,24 +1,75 @@
 import * as vscode from 'vscode';
 import * as fs from 'fs/promises';
 import * as path from 'path';
+import { ConfigurationService } from './services/configurationService';
+import { apiService, ApiService, GenerationRequest } from './services/apiService';
+import { ErrorHandler, ExtensionError, ErrorType } from './utils/errorHandler';
 
-// --- Global variables for the panel and API Key (simulated) ---
-// In a real extension, you would securely load or prompt for the API key.
-const API_KEY = "YOUR_GEMINI_API_KEY"; // Placeholder for the actual key
+let outputChannel: vscode.OutputChannel;
 
 /**
  * The main entry point for your extension.
  * @param context The extension context provided by VS Code.
  */
 export function activate(context: vscode.ExtensionContext) {
-	console.log('AI Full-Stack Generator (GHC) is now active!');
+	// Create output channel for logging
+	outputChannel = vscode.window.createOutputChannel('R-Net AI');
+	outputChannel.appendLine('AI Full-Stack Generator (GHC) is now active!');
 
-	// Register the command that opens the Webview panel
-	let disposable = vscode.commands.registerCommand('ghc.openGeneratorPanel', () => {
+	// Initialize error handler
+	ErrorHandler.initialize(outputChannel);
+
+	// Register commands
+	const openPanelCommand = vscode.commands.registerCommand('ghc.openGeneratorPanel', () => {
 		createGeneratorPanel(context);
 	});
 
-	context.subscriptions.push(disposable);
+	const configureCommand = vscode.commands.registerCommand('ghc.configure', () => {
+		ConfigurationService.showConfigurationDialog();
+	});
+
+	const testConnectionCommand = vscode.commands.registerCommand('ghc.testConnection', async () => {
+		await testBackendConnection();
+	});
+
+	// Listen for configuration changes
+	const configListener = ConfigurationService.onConfigurationChanged(() => {
+		apiService.updateClient();
+		outputChannel.appendLine('Configuration updated, API client refreshed');
+	});
+
+	context.subscriptions.push(
+		openPanelCommand,
+		configureCommand,
+		testConnectionCommand,
+		configListener,
+		outputChannel
+	);
+}
+
+/**
+ * Test backend connection
+ */
+async function testBackendConnection(): Promise<void> {
+	try {
+		vscode.window.withProgress(
+			{
+				location: vscode.ProgressLocation.Notification,
+				title: 'Testing backend connection...',
+				cancellable: false
+			},
+			async () => {
+				const result = await apiService.testConnection();
+				if (result.success) {
+					vscode.window.showInformationMessage('✅ Backend connection successful!');
+				} else {
+					vscode.window.showErrorMessage(`❌ Backend connection failed: ${result.error}`);
+				}
+			}
+		);
+			} catch (error) {
+			await ErrorHandler.handleError(error, 'Backend Connection Test');
+		}
 }
 
 /**
@@ -26,89 +77,30 @@ export function activate(context: vscode.ExtensionContext) {
  */
 async function createGeneratorPanel(context: vscode.ExtensionContext) {
 	const panel = vscode.window.createWebviewPanel(
-		'ghcGenerator', // Internal panel type
-		'AI Full-Stack Generator', // Panel title shown to the user
-		vscode.ViewColumn.One, // Editor column to show the panel in
+		'ghcGenerator',
+		'AI Full-Stack Generator',
+		vscode.ViewColumn.One,
 		{
-			// Enable scripts in the webview
 			enableScripts: true,
-			// Restrict the webview to load resources only from the extension's 'media' or 'src' directory
 			localResourceRoots: [vscode.Uri.joinPath(context.extensionUri, 'src')]
 		}
 	);
 
 	try {
-		// 1. Read the HTML file content
-		// We use Uri.joinPath to create a secure, path-agnostic URI for the file.
-		// Assuming generator-webview.html is located in the 'src' directory after build.
 		const htmlPath = vscode.Uri.joinPath(context.extensionUri, 'src', 'generator-webview.html');
 		const htmlContent = await fs.readFile(htmlPath.fsPath, 'utf-8');
-		
-		// 2. Set the HTML content of the panel
 		panel.webview.html = htmlContent;
-
 	} catch (error) {
-		console.error('Error loading webview HTML:', error);
+		outputChannel.appendLine(`Error loading webview HTML: ${error}`);
 		panel.webview.html = `<h1>Error Loading UI</h1><p>Could not load generator-webview.html. Check file paths and extension structure.</p>`;
 		return;
 	}
 
-	// 3. Handle messages received from the Webview (generator-webview.html)
+	// Handle messages from webview
 	panel.webview.onDidReceiveMessage(
-		async message => {
+		async (message: any) => {
 			if (message.command === 'generateCode') {
-				console.log('Received generation request from Webview.');
-				
-				// Show a brief message to the user that the process has started
-				panel.webview.postMessage({ 
-					command: 'generationStarted',
-					text: 'Processing your request... Analyzing image and prompt.'
-				});
-
-				// Extract the payload
-				const { image_data, description, tech_stack } = message;
-
-				// --- Placeholder for the actual API call logic ---
-				try {
-					// 1. You would call your Python backend (or direct Gemini API) here.
-					//    The API call uses image_data (Base64) and description.
-					console.log(`Frontend Stack: ${tech_stack.frontend}, Description length: ${description.length}`);
-
-					// 2. Simulated delay for the generation process
-					await new Promise(resolve => setTimeout(resolve, 5000)); 
-
-					// 3. Simulate receiving files and writing them to the workspace
-					//    This is where you'd handle the response from your AI/backend.
-					
-					// Example: Create a simple placeholder file
-					const workspaceFolders = vscode.workspace.workspaceFolders;
-					if (workspaceFolders) {
-						const rootPath = workspaceFolders[0].uri.fsPath;
-						const targetFilePath = path.join(rootPath, 'generated_app_readme.md');
-						
-						await fs.writeFile(
-							targetFilePath, 
-							`# Generated Application\n\n**Frontend:** ${tech_stack.frontend}\n**Backend:** ${tech_stack.backend}\n**Database:** ${tech_stack.database}\n\n**Description:**\n${description}`
-						);
-						
-						vscode.window.showInformationMessage('Code generation finished. Check your workspace for generated files.');
-						
-						panel.webview.postMessage({ 
-							command: 'generationComplete',
-							text: 'Successfully generated files into your workspace!'
-						});
-					} else {
-						throw new Error("No open workspace folder found to save files.");
-					}
-
-				} catch (error) {
-					console.error('Generation failed:', error);
-					vscode.window.showErrorMessage(`AI Generation failed: ${error instanceof Error ? error.message : 'Unknown error'}`);
-					panel.webview.postMessage({ 
-						command: 'generationError',
-						text: `Generation failed: ${error instanceof Error ? error.message : 'Check console for details.'}`
-					});
-				}
+				await handleCodeGeneration(panel, message);
 			}
 		},
 		undefined,
@@ -116,5 +108,181 @@ async function createGeneratorPanel(context: vscode.ExtensionContext) {
 	);
 }
 
-// this method is called when your extension is deactivated
-export function deactivate() {}
+/**
+ * Handle code generation request
+ */
+async function handleCodeGeneration(panel: vscode.WebviewPanel, message: any): Promise<void> {
+	try {
+		outputChannel.appendLine('Received code generation request');
+		
+		// Show progress notification
+		panel.webview.postMessage({
+			command: 'generationStarted',
+			text: 'Connecting to AI service...'
+		});
+
+		// Extract request data
+		const { image_data, description, tech_stack, project_name } = message;
+
+		// Validate inputs
+		if (!image_data || !description || !tech_stack) {
+			throw ErrorHandler.createValidationError(
+				'Missing required input data',
+				['Please upload an image', 'Provide a detailed description', 'Select technology stack']
+			);
+		}
+
+		if (description.length < 10) {
+			throw ErrorHandler.createValidationError(
+				'Description is too short',
+				['Please provide at least 10 characters', 'Add more details about your application requirements']
+			);
+		}
+
+		// Create generation request
+		const request: GenerationRequest = {
+			image_data,
+			description,
+			tech_stack,
+			project_name: project_name || 'generated-app'
+		};
+
+		outputChannel.appendLine(`Starting generation for project: ${request.project_name}`);
+		outputChannel.appendLine(`Tech stack: ${JSON.stringify(tech_stack)}`);
+
+		// Update progress
+		panel.webview.postMessage({
+			command: 'generationStarted',
+			text: 'Generating code with AI... This may take 15-45 seconds.'
+		});
+
+		// Call API service
+		const response = await apiService.generateCode(request);
+
+		if (response.success) {
+			// Create project files
+			await createProjectFiles(response, request.project_name || 'generated-app');
+			
+			// Show success message
+			panel.webview.postMessage({
+				command: 'generationComplete',
+				text: `Successfully generated ${response.files.length} files! Check your workspace.`
+			});
+
+			// Show info with options
+			const action = await vscode.window.showInformationMessage(
+				`Code generation completed! Generated ${response.files.length} files.`,
+				'Open Project Folder',
+				'Show Setup Instructions'
+			);
+
+			if (action === 'Open Project Folder') {
+				const workspaceFolders = vscode.workspace.workspaceFolders;
+				if (workspaceFolders) {
+					const projectPath = path.join(workspaceFolders[0].uri.fsPath, request.project_name || 'generated-app');
+					vscode.commands.executeCommand('vscode.openFolder', vscode.Uri.file(projectPath), true);
+				}
+			} else if (action === 'Show Setup Instructions') {
+				showSetupInstructions(response.setup_instructions);
+			}
+
+		} else {
+			throw new Error(response.error_details || 'Code generation failed');
+		}
+
+	} catch (error) {
+		outputChannel.appendLine(`Generation failed: ${error}`);
+		
+		const errorMessage = error instanceof Error ? error.message : 'Unknown error occurred';
+		
+		panel.webview.postMessage({
+			command: 'generationError',
+			text: errorMessage
+		});
+
+		await ErrorHandler.handleError(error, 'Code Generation');
+	}
+}
+
+/**
+ * Create project files in workspace
+ */
+async function createProjectFiles(response: any, projectName: string): Promise<void> {
+	const workspaceFolders = vscode.workspace.workspaceFolders;
+	if (!workspaceFolders) {
+		throw ErrorHandler.createFileSystemError(
+			'No workspace folder found',
+			'Please open a folder in VS Code before generating code'
+		);
+	}
+
+	const config = ConfigurationService.getConfiguration();
+	const rootPath = workspaceFolders[0].uri.fsPath;
+	
+	// Create project directory if configured
+	const projectPath = config.generation.createFolder 
+		? path.join(rootPath, projectName) 
+		: rootPath;
+
+	// Create project directory
+	if (config.generation.createFolder) {
+		await fs.mkdir(projectPath, { recursive: true });
+	}
+
+	// Create all files
+	const createdFiles: string[] = [];
+	
+	for (const file of response.files) {
+		const filePath = path.join(projectPath, file.path);
+		const fileDir = path.dirname(filePath);
+		
+		// Create directory structure
+		await fs.mkdir(fileDir, { recursive: true });
+		
+		// Write file content
+		await fs.writeFile(filePath, file.content, 'utf-8');
+		createdFiles.push(filePath);
+		
+		outputChannel.appendLine(`Created: ${file.path}`);
+	}
+
+	// Create setup instructions file
+	if (response.setup_instructions && response.setup_instructions.length > 0) {
+		const setupPath = path.join(projectPath, 'SETUP.md');
+		const setupContent = `# Setup Instructions\n\n${response.setup_instructions.map((instruction: string, index: number) => `${index + 1}. ${instruction}`).join('\n')}\n`;
+		await fs.writeFile(setupPath, setupContent, 'utf-8');
+		createdFiles.push(setupPath);
+	}
+
+	// Open first file if configured
+	if (config.generation.autoOpen && createdFiles.length > 0) {
+		const firstFile = createdFiles.find(f => f.endsWith('.md') || f.endsWith('.ts') || f.endsWith('.js') || f.endsWith('.py'));
+		if (firstFile) {
+			const document = await vscode.workspace.openTextDocument(firstFile);
+			await vscode.window.showTextDocument(document);
+		}
+	}
+
+	outputChannel.appendLine(`Created ${createdFiles.length} files in ${projectPath}`);
+}
+
+/**
+ * Show setup instructions in a new document
+ */
+async function showSetupInstructions(instructions: string[]): Promise<void> {
+	const content = `# R-Net AI - Setup Instructions\n\n${instructions.map((instruction, index) => `${index + 1}. ${instruction}`).join('\n\n')}\n\n---\n\nGenerated by R-Net AI Extension`;
+	
+	const document = await vscode.workspace.openTextDocument({
+		content,
+		language: 'markdown'
+	});
+	
+	await vscode.window.showTextDocument(document);
+}
+
+// This method is called when your extension is deactivated
+export function deactivate() {
+	if (outputChannel) {
+		outputChannel.dispose();
+	}
+}

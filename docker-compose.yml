@@ -1,0 +1,97 @@
+version: '3.8'
+
+services:
+  # R-Net AI Backend Service
+  backend:
+    build:
+      context: ./r-net-backend
+      dockerfile: Dockerfile
+    container_name: rnet-ai-backend
+    ports:
+      - "8000:8000"
+    environment:
+      - OPENAI_API_KEY=${OPENAI_API_KEY}
+      - OPENAI_API_BASE=${OPENAI_API_BASE:-https://api.openai.com/v1}
+      - MODEL_NAME=${MODEL_NAME:-gpt-4-vision-preview}
+      - MAX_TOKENS=${MAX_TOKENS:-4096}
+      - TEMPERATURE=${TEMPERATURE:-0.7}
+      - HOST=0.0.0.0
+      - PORT=8000
+      - DEBUG=${DEBUG:-False}
+      - LOG_LEVEL=${LOG_LEVEL:-INFO}
+    volumes:
+      - ./r-net-backend/logs:/app/logs
+      - ./r-net-backend/uploads:/app/uploads
+    healthcheck:
+      test: ["CMD", "python", "-c", "import requests; requests.get('http://localhost:8000/health')"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 40s
+    restart: unless-stopped
+    networks:
+      - rnet-network
+
+  # Redis for caching (optional)
+  redis:
+    image: redis:7-alpine
+    container_name: rnet-ai-redis
+    ports:
+      - "6379:6379"
+    volumes:
+      - redis_data:/data
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+    restart: unless-stopped
+    networks:
+      - rnet-network
+
+  # PostgreSQL for future database needs (optional)
+  postgres:
+    image: postgres:15-alpine
+    container_name: rnet-ai-postgres
+    ports:
+      - "5432:5432"
+    environment:
+      - POSTGRES_DB=${POSTGRES_DB:-rnetai}
+      - POSTGRES_USER=${POSTGRES_USER:-rnetai}
+      - POSTGRES_PASSWORD=${POSTGRES_PASSWORD:-changeme}
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U ${POSTGRES_USER:-rnetai}"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+    restart: unless-stopped
+    networks:
+      - rnet-network
+
+  # Nginx reverse proxy (optional)
+  nginx:
+    image: nginx:alpine
+    container_name: rnet-ai-nginx
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes:
+      - ./nginx.conf:/etc/nginx/nginx.conf:ro
+      - ./ssl:/etc/nginx/ssl:ro
+    depends_on:
+      - backend
+    restart: unless-stopped
+    networks:
+      - rnet-network
+
+volumes:
+  redis_data:
+    driver: local
+  postgres_data:
+    driver: local
+
+networks:
+  rnet-network:
+    driver: bridge

@@ -4,6 +4,10 @@
   "description": "Generate full-stack application code from a sketch/image and a detailed prompt using AI.",
   "version": "1.0.0",
   "publisher": "YourName",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jonson42/R-Net-AI.git"
+  },
   "engines": {
     "vscode": "^1.80.0"
   },
@@ -11,31 +15,92 @@
     "Other",
     "Programming Languages"
   ],
-  "activationEvents": [
-    "onCommand:ghc.openGeneratorPanel"
-  ],
+  "activationEvents": [],
   "main": "./src/extension.js",
   "contributes": {
     "commands": [
       {
         "command": "ghc.openGeneratorPanel",
         "title": "GHC: Open AI Full-Stack Generator"
+      },
+      {
+        "command": "ghc.configure",
+        "title": "GHC: Configure Settings"
+      },
+      {
+        "command": "ghc.testConnection",
+        "title": "GHC: Test Backend Connection"
       }
-    ]
+    ],
+    "configuration": {
+      "title": "R-Net AI",
+      "properties": {
+        "rnet-ai.backend.url": {
+          "type": "string",
+          "default": "http://127.0.0.1:8000",
+          "description": "Backend service URL"
+        },
+        "rnet-ai.backend.timeout": {
+          "type": "number",
+          "default": 60000,
+          "description": "Request timeout in milliseconds"
+        },
+        "rnet-ai.generation.autoOpen": {
+          "type": "boolean",
+          "default": true,
+          "description": "Automatically open generated files"
+        },
+        "rnet-ai.generation.createFolder": {
+          "type": "boolean",
+          "default": true,
+          "description": "Create project folder for generated files"
+        },
+        "rnet-ai.ui.theme": {
+          "type": "string",
+          "enum": [
+            "auto",
+            "light",
+            "dark"
+          ],
+          "default": "auto",
+          "description": "UI theme preference"
+        }
+      }
+    }
   },
   "scripts": {
     "vscode:prepublish": "npm run compile",
-    "compile": "tsc -p ./",
-    "watch": "tsc -watch -p ./",
-    "pretest": "npm run compile && npm run lint",
-    "lint": "eslint src --ext ts",
+    "compile": "webpack",
+    "watch": "webpack --watch",
+    "package": "webpack --mode production --devtool hidden-source-map && vsce package",
+    "compile-tests": "tsc -p . --outDir out",
+    "watch-tests": "tsc -p . -w --outDir out",
+    "pretest": "npm run compile-tests && npm run lint",
+    "lint": "eslint src",
     "test": "vscode-test"
   },
+  "dependencies": {
+    "axios": "^1.6.0"
+  },
   "devDependencies": {
+    "@types/chai": "^5.2.3",
     "@types/jest": "^30.0.0",
-    "@types/node": "^18.15.0",
+    "@types/mocha": "^10.0.6",
+    "@types/node": "^18.19.130",
+    "@types/sinon": "^17.0.2",
     "@types/vscode": "^1.80.0",
-    "tslint": "^6.1.3",
-    "typescript": "^5.0.0"
+    "@typescript-eslint/eslint-plugin": "^6.12.0",
+    "@typescript-eslint/parser": "^6.12.0",
+    "@vscode/test-cli": "^0.0.4",
+    "@vscode/test-electron": "^2.3.8",
+    "@vscode/vsce": "^2.22.0",
+    "chai": "^6.2.0",
+    "eslint": "^8.54.0",
+    "mocha": "^10.2.0",
+    "sinon": "^17.0.1",
+    "ts-loader": "^9.5.1",
+    "typescript": "^5.0.0",
+    "webpack": "^5.89.0",
+    "webpack-cli": "^5.1.4"
   }
 }
