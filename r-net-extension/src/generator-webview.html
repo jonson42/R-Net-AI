@@ -269,15 +269,24 @@
         generateButton.textContent = 'Generating... Please Wait (15-45s)';
         showStatus('Sending request to the Python AI service...', 'info');
 
+        // Generate project name from description
+        const description = promptInput.value.trim();
+        const projectName = description
+            .toLowerCase()
+            .replace(/[^a-z0-9\s]/g, '')
+            .replace(/\s+/g, '-')
+            .substring(0, 30) || 'generated-app';
+
         const requestData = {
             command: 'generateCode',
             image_data: base64Image,
-            description: promptInput.value.trim(),
+            description: description,
             tech_stack: {
                 frontend: feSelect.value,
                 backend: beSelect.value,
                 database: dbSelect.value
-            }
+            },
+            project_name: projectName
         };
 
         // Post the message back to the VS Code Extension Host (extension.ts)

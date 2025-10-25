@@ -139,12 +139,19 @@ async function handleCodeGeneration(panel: vscode.WebviewPanel, message: any): P
 			);
 		}
 
+		// Generate project name from description if not provided
+		const generatedProjectName = project_name || 
+			description.toLowerCase()
+				.replace(/[^a-z0-9\s]/g, '')
+				.replace(/\s+/g, '-')
+				.substring(0, 30) || 'generated-app';
+
 		// Create generation request
 		const request: GenerationRequest = {
 			image_data,
 			description,
 			tech_stack,
-			project_name: project_name || 'generated-app'
+			project_name: generatedProjectName
 		};
 
 		outputChannel.appendLine(`Starting generation for project: ${request.project_name}`);
