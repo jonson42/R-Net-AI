@@ -100,6 +100,19 @@ class OpenAIService:
                 features=features if features else []
             )
             
+            # Log the final prompts for checking
+            logger.info("=" * 80)
+            logger.info("FINAL PROMPT SENT TO OPENAI:")
+            logger.info("=" * 80)
+            logger.info("SYSTEM PROMPT:")
+            logger.info("-" * 80)
+            logger.info(system_prompt)
+            logger.info("-" * 80)
+            logger.info("USER PROMPT:")
+            logger.info("-" * 80)
+            logger.info(user_prompt)
+            logger.info("=" * 80)
+            
             logger.info("Sending request to OpenAI API")
             
             # Call OpenAI API with retry logic
