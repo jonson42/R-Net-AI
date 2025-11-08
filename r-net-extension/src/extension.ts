@@ -12,25 +12,110 @@ let outputChannel: vscode.OutputChannel;
  * @param context The extension context provided by VS Code.
  */
 export function activate(context: vscode.ExtensionContext) {
-	// Create output channel for logging
-	outputChannel = vscode.window.createOutputChannel('R-Net AI');
-	outputChannel.appendLine('AI Full-Stack Generator (GHC) is now active!');
+	try {
+		// Create output channel for logging
+		outputChannel = vscode.window.createOutputChannel('R-Net AI');
+		outputChannel.appendLine('=== EXTENSION ACTIVATION STARTED ===');
+		outputChannel.appendLine('AI Full-Stack Generator (GHC) is now active!');
+		outputChannel.show(); // Force show the output channel
+		
+		// Show activation message to user
+		vscode.window.showInformationMessage('R-Net AI Extension Activated! Commands: GHC');
+		console.log('R-Net AI Extension Activated Successfully');
 
-	// Initialize error handler
-	ErrorHandler.initialize(outputChannel);
+		// Initialize error handler
+		ErrorHandler.initialize(outputChannel);
+		outputChannel.appendLine('Error handler initialized');
+	} catch (error) {
+		console.error('Extension activation failed:', error);
+		vscode.window.showErrorMessage(`Extension activation failed: ${error}`);
+		return;
+	}
 
 	// Register commands
+	outputChannel.appendLine('Registering commands...');
+	
 	const openPanelCommand = vscode.commands.registerCommand('ghc.openGeneratorPanel', () => {
+		outputChannel.appendLine('OpenGeneratorPanel command executed');
+		vscode.window.showInformationMessage('Opening Generator Panel...');
 		createGeneratorPanel(context);
 	});
 
 	const configureCommand = vscode.commands.registerCommand('ghc.configure', () => {
+		console.log('GHC Configure command executed');
+		outputChannel.appendLine('Configure command executed');
+		vscode.window.showInformationMessage('Configure command executed!');
 		ConfigurationService.showConfigurationDialog();
 	});
 
 	const testConnectionCommand = vscode.commands.registerCommand('ghc.testConnection', async () => {
-		await testBackendConnection();
+		outputChannel.appendLine('=== MANUAL CONNECTION TEST STARTED ===');
+		outputChannel.appendLine('Test connection command executed');
+		vscode.window.showInformationMessage('Testing connection...');
+		
+		try {
+			await testBackendConnection();
+			outputChannel.appendLine('=== MANUAL CONNECTION TEST COMPLETED ===');
+		} catch (error) {
+			outputChannel.appendLine(`=== CONNECTION TEST FAILED: ${error} ===`);
+		}
 	});
+
+	// Add a simple test command
+	const testCommand = vscode.commands.registerCommand('ghc.test', () => {
+		outputChannel.appendLine('Simple test command executed');
+		vscode.window.showInformationMessage('R-Net AI Extension is working! All commands should be available.');
+	});
+
+	// Add API test command
+	const testAPICommand = vscode.commands.registerCommand('ghc.testAPI', async () => {
+		outputChannel.appendLine('=== API TEST COMMAND STARTED ===');
+		vscode.window.showInformationMessage('Testing API call to backend...');
+		
+		try {
+			// Test health endpoint
+			outputChannel.appendLine('Testing health endpoint...');
+			const healthResult = await apiService.testConnection();
+			outputChannel.appendLine(`Health test result: ${JSON.stringify(healthResult)}`);
+			
+			if (healthResult.success) {
+				// Test generate endpoint with minimal data
+				outputChannel.appendLine('Testing generate endpoint...');
+				
+				// Create a minimal test image (1x1 white pixel in base64)
+				const testImageBase64 = 'iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mP8/5+hHgAHggJ/PchI7wAAAABJRU5ErkJggg==';
+				
+				const testRequest: GenerationRequest = {
+					image_data: testImageBase64,
+					description: 'Simple test application with a hello world component and basic navigation',
+					tech_stack: {
+						frontend: 'React',
+						backend: 'FastAPI',
+						database: 'PostgreSQL'
+					},
+					project_name: 'api-test'
+				};
+				
+				const generateResult = await apiService.generateCode(testRequest);
+				outputChannel.appendLine(`Generate test result: Success=${generateResult.success}, Files=${generateResult.files.length}`);
+				
+				if (generateResult.success) {
+					vscode.window.showInformationMessage(`API Test Successful! Generated ${generateResult.files.length} files.`);
+				} else {
+					vscode.window.showWarningMessage(`API Test Failed: ${generateResult.error_details || 'Unknown error'}`);
+				}
+			} else {
+				vscode.window.showWarningMessage(`Health Check Failed: ${healthResult.error}`);
+			}
+		} catch (error) {
+			outputChannel.appendLine(`API test error: ${error}`);
+			vscode.window.showErrorMessage(`API Test Error: ${error}`);
+		}
+		
+		outputChannel.appendLine('=== API TEST COMMAND COMPLETED ===');
+	});
+	
+	outputChannel.appendLine('All commands registered successfully');
 
 	// Listen for configuration changes
 	const configListener = ConfigurationService.onConfigurationChanged(() => {
@@ -42,9 +127,27 @@ export function activate(context: vscode.ExtensionContext) {
 		openPanelCommand,
 		configureCommand,
 		testConnectionCommand,
+		testCommand,
+		testAPICommand,
 		configListener,
 		outputChannel
 	);
+	
+	outputChannel.appendLine('=== EXTENSION ACTIVATION COMPLETED ===');
+	outputChannel.appendLine('Commands available:');
+	outputChannel.appendLine('- ghc.openGeneratorPanel (GHC: Open AI Full-Stack Generator)');
+	outputChannel.appendLine('- ghc.configure (GHC: Configure Settings)');
+	outputChannel.appendLine('- ghc.testConnection (GHC: Test Backend Connection)');
+	
+	// Test if commands are actually registered
+	vscode.commands.getCommands(true).then(commands => {
+		const ghcCommands = commands.filter(cmd => cmd.startsWith('ghc.'));
+		outputChannel.appendLine(`Registered GHC commands: ${ghcCommands.join(', ')}`);
+		if (ghcCommands.length === 0) {
+			outputChannel.appendLine('WARNING: No GHC commands found in registered commands!');
+			vscode.window.showWarningMessage('Extension commands not registered properly!');
+		}
+	});
 }
 
 /**

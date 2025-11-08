@@ -1,0 +1,73 @@
+2025-11-08 10:49:17,304 - middleware.security - WARNING - Generated default API key: rnet_dev_7VL5k6ey8BrJUvDjdEZQUdIF24p6Ydpp3V6SlyRzrAw
+INFO:     Will watch for changes in these directories: ['/Applications/Bản sao sources/R-Net-AI/r-net-backend']
+INFO:     Uvicorn running on http://127.0.0.1:8000 (Press CTRL+C to quit)
+INFO:     Started reloader process [59914] using WatchFiles
+2025-11-08 10:49:17,688 - middleware.security - WARNING - Generated default API key: rnet_dev_Tkf7eRkhW3bpMGxq8_SuHZTjUSeWMu71GympvKuprA8
+INFO:     Started server process [59975]
+INFO:     Waiting for application startup.
+2025-11-08 10:49:17,713 - main - INFO - Starting R-Net AI Backend Service...
+2025-11-08 10:49:17,783 - watchfiles.main - INFO - 1 change detected
+2025-11-08 10:49:18,145 - main - INFO - ✓ OpenAI API connection successful
+INFO:     Application startup complete.
+INFO:     127.0.0.1:53993 - "GET / HTTP/1.1" 200 OK
+2025-11-08 10:49:37,041 - services.syntax_validator - INFO - Validating syntax for 1 generated files
+2025-11-08 10:49:37,041 - services.syntax_validator - INFO - ✓ All 1 files passed syntax validation
+INFO:     127.0.0.1:53997 - "POST /validate HTTP/1.1" 200 OK
+2025-11-08 10:49:37,063 - services.syntax_validator - INFO - Validating syntax for 1 generated files
+2025-11-08 10:49:37,063 - services.syntax_validator - INFO - ✓ All 1 files passed syntax validation
+INFO:     127.0.0.1:53998 - "POST /validate HTTP/1.1" 200 OK
+2025-11-08 10:49:37,085 - services.syntax_validator - INFO - Validating syntax for 1 generated files
+2025-11-08 10:49:37,085 - services.syntax_validator - INFO - ✓ All 1 files passed syntax validation
+INFO:     127.0.0.1:53999 - "POST /validate HTTP/1.1" 200 OK
+2025-11-08 10:49:37,108 - services.syntax_validator - INFO - Validating syntax for 1 generated files
+2025-11-08 10:49:37,109 - services.syntax_validator - INFO - ✓ All 1 files passed syntax validation
+INFO:     127.0.0.1:54000 - "POST /validate HTTP/1.1" 200 OK
+2025-11-08 10:49:37,132 - services.syntax_validator - INFO - Validating syntax for 1 generated files
+2025-11-08 10:49:37,133 - services.syntax_validator - INFO - ✓ All 1 files passed syntax validation
+INFO:     127.0.0.1:54001 - "POST /validate HTTP/1.1" 200 OK
+2025-11-08 10:49:37,155 - services.syntax_validator - INFO - Validating syntax for 1 generated files
+2025-11-08 10:49:37,155 - services.syntax_validator - INFO - ✓ All 1 files passed syntax validation
+INFO:     127.0.0.1:54004 - "POST /validate HTTP/1.1" 200 OK
+2025-11-08 10:49:37,178 - services.syntax_validator - INFO - Validating syntax for 1 generated files
+2025-11-08 10:49:37,178 - services.syntax_validator - INFO - ✓ All 1 files passed syntax validation
+INFO:     127.0.0.1:54006 - "POST /validate HTTP/1.1" 200 OK
+2025-11-08 10:49:37,200 - services.syntax_validator - INFO - Validating syntax for 1 generated files
+2025-11-08 10:49:37,200 - services.syntax_validator - INFO - ✓ All 1 files passed syntax validation
+INFO:     127.0.0.1:54007 - "POST /validate HTTP/1.1" 200 OK
+2025-11-08 10:49:37,222 - services.syntax_validator - INFO - Validating syntax for 1 generated files
+2025-11-08 10:49:37,222 - services.syntax_validator - INFO - ✓ All 1 files passed syntax validation
+INFO:     127.0.0.1:54008 - "POST /validate HTTP/1.1" 200 OK
+2025-11-08 10:49:37,244 - services.syntax_validator - INFO - Validating syntax for 1 generated files
+2025-11-08 10:49:37,244 - services.syntax_validator - INFO - ✓ All 1 files passed syntax validation
+INFO:     127.0.0.1:54009 - "POST /validate HTTP/1.1" 200 OK
+2025-11-08 10:49:55,152 - watchfiles.main - INFO - 1 change detected
+WARNING:  WatchFiles detected changes in 'main.py'. Reloading...
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+2025-11-08 10:49:55,260 - main - INFO - Shutting down R-Net AI Backend Service...
+INFO:     Application shutdown complete.
+INFO:     Finished server process [59975]
+2025-11-08 10:49:55,639 - watchfiles.main - INFO - 1 change detected
+2025-11-08 10:49:55,775 - middleware.security - WARNING - Generated default API key: rnet_dev_0oXLlyFYiMoELxTvGKha76CGeoaCfd7haVwjETN0w-o
+INFO:     Started server process [60581]
+INFO:     Waiting for application startup.
+2025-11-08 10:49:55,800 - main - INFO - Starting R-Net AI Backend Service...
+2025-11-08 10:49:55,998 - watchfiles.main - INFO - 4 changes detected
+2025-11-08 10:49:56,291 - main - INFO - ✓ OpenAI API connection successful
+INFO:     Application startup complete.
+2025-11-08 10:51:41,574 - main - INFO - Code generation request for project: student-management-generate-th
+2025-11-08 10:51:41,575 - main - INFO - Tech stack: frontend=<TechStackOptions.REACT: 'React'> backend=<TechStackOptions.FASTAPI: 'FastAPI'> database=<TechStackOptions.POSTGRESQL: 'PostgreSQL'>
+2025-11-08 10:51:41,576 - main - INFO - Description length: 247 characters
+2025-11-08 10:51:41,577 - services.openai_service - INFO - Starting code generation for project: student-management-generate-th
+2025-11-08 10:51:41,830 - services.openai_service - INFO - Image processed successfully
+2025-11-08 10:51:41,830 - services.openai_service - INFO - Sending request to OpenAI API
+2025-11-08 10:52:35,485 - services.openai_service - INFO - OpenAI API response received, parsing content
+2025-11-08 10:52:35,488 - services.openai_service - INFO - Code generation completed successfully - 19 files generated
+2025-11-08 10:52:35,488 - main - INFO - Validating syntax of generated files...
+2025-11-08 10:52:35,488 - services.syntax_validator - INFO - Validating syntax for 19 generated files
+2025-11-08 10:52:35,492 - services.syntax_validator - ERROR - Syntax error in frontend/tailwind.config.js: Unclosed '[' at line 2
+2025-11-08 10:52:35,493 - services.syntax_validator - WARNING - ✗ 1 files have syntax errors out of 11 validated
+2025-11-08 10:52:35,493 - main - WARNING - Syntax validation found 1 errors
+2025-11-08 10:52:35,493 - main - WARNING -   - frontend/tailwind.config.js: Unclosed '[' at line 2
+2025-11-08 10:52:35,494 - main - INFO - Code generation completed successfully - 19 files generated, 11 validated
+INFO:     127.0.0.1:54029 - "POST /generate HTTP/1.1" 200 OK

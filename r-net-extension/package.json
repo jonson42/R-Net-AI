@@ -15,8 +15,10 @@
     "Other",
     "Programming Languages"
   ],
-  "activationEvents": [],
-  "main": "./src/extension.js",
+  "activationEvents": [
+    "onStartupFinished"
+  ],
+  "main": "./dist/extension.js",
   "contributes": {
     "commands": [
       {
@@ -30,6 +32,14 @@
       {
         "command": "ghc.testConnection",
         "title": "GHC: Test Backend Connection"
+      },
+      {
+        "command": "ghc.test",
+        "title": "R-Net AI: Test Extension"
+      },
+      {
+        "command": "ghc.testAPI",
+        "title": "R-Net AI: Test API Call"
       }
     ],
     "configuration": {

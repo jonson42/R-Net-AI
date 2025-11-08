@@ -1,0 +1,782 @@
+2025-10-30 18:31:34,083 - main - INFO - Starting R-Net AI Backend Service...
+2025-10-30 18:31:34,719 - main - INFO - ✓ OpenAI API connection successful
+2025-10-30 18:35:36,952 - main - INFO - Shutting down R-Net AI Backend Service...
+2025-10-30 18:50:01,138 - main - INFO - Starting R-Net AI Backend Service...
+2025-10-30 18:50:01,664 - main - INFO - ✓ OpenAI API connection successful
+2025-10-30 18:50:16,124 - main - INFO - Shutting down R-Net AI Backend Service...
+2025-10-30 18:50:26,254 - main - INFO - Starting R-Net AI Backend Service...
+2025-10-30 18:50:26,700 - main - INFO - ✓ OpenAI API connection successful
+2025-10-30 18:55:25,447 - main - INFO - Code generation request for project: api-test
+2025-10-30 18:55:25,448 - main - INFO - Tech stack: frontend=<TechStackOptions.REACT: 'React'> backend=<TechStackOptions.FASTAPI: 'FastAPI'> database=<TechStackOptions.POSTGRESQL: 'PostgreSQL'>
+2025-10-30 18:55:25,448 - main - INFO - Description length: 52 characters
+2025-10-30 18:55:25,448 - services.openai_service - INFO - Starting code generation for project: api-test
+2025-10-30 18:55:25,448 - services.openai_service - ERROR - Validation error: Image data is required
+2025-10-30 18:55:25,448 - main - ERROR - Validation error: Image data is required
+2025-10-30 18:57:29,882 - main - INFO - Code generation request for project: api-test
+2025-10-30 18:57:29,883 - main - INFO - Tech stack: frontend=<TechStackOptions.REACT: 'React'> backend=<TechStackOptions.FASTAPI: 'FastAPI'> database=<TechStackOptions.POSTGRESQL: 'PostgreSQL'>
+2025-10-30 18:57:29,883 - main - INFO - Description length: 73 characters
+2025-10-30 18:57:29,883 - services.openai_service - INFO - Starting code generation for project: api-test
+2025-10-30 18:57:29,950 - services.openai_service - INFO - Image processed successfully
+2025-10-30 18:57:29,950 - services.openai_service - INFO - Sending request to OpenAI API
+2025-10-30 18:57:47,356 - services.openai_service - INFO - OpenAI API response received, parsing content
+2025-10-30 18:57:47,356 - services.openai_service - INFO - Code generation completed successfully - 9 files generated
+2025-10-30 18:57:47,356 - main - INFO - Code generation completed successfully - 9 files generated
+2025-10-30 19:11:18,999 - main - INFO - Starting R-Net AI Backend Service...
+2025-10-30 19:11:19,528 - main - INFO - ✓ OpenAI API connection successful
+2025-10-30 19:11:41,676 - main - INFO - Shutting down R-Net AI Backend Service...
+2025-10-30 19:11:47,923 - main - INFO - Starting R-Net AI Backend Service...
+2025-10-30 19:11:48,447 - main - INFO - ✓ OpenAI API connection successful
+2025-10-30 19:12:02,500 - main - INFO - Shutting down R-Net AI Backend Service...
+2025-10-30 19:16:54,224 - main - INFO - Starting R-Net AI Backend Service...
+2025-10-30 19:16:54,741 - main - INFO - ✓ OpenAI API connection successful
+2025-10-30 19:17:13,433 - main - INFO - Code generation request for project: test-project
+2025-10-30 19:17:13,433 - main - INFO - Tech stack: frontend=<TechStackOptions.REACT: 'React'> backend=<TechStackOptions.FASTAPI: 'FastAPI'> database=<TechStackOptions.POSTGRESQL: 'PostgreSQL'>
+2025-10-30 19:17:13,433 - main - INFO - Description length: 43 characters
+2025-10-30 19:17:13,433 - services.openai_service - INFO - Starting code generation for project: test-project
+2025-10-30 19:17:13,473 - services.openai_service - INFO - Image processed successfully
+2025-10-30 19:17:13,473 - services.openai_service - INFO - Sending request to OpenAI API
+2025-10-30 19:17:33,192 - services.openai_service - INFO - OpenAI API response received, parsing content
+2025-10-30 19:17:33,193 - services.openai_service - INFO - Code generation completed successfully - 9 files generated
+2025-10-30 19:17:33,193 - main - INFO - Code generation completed successfully - 9 files generated
+2025-10-30 19:32:04,379 - main - INFO - Code generation request for project: api-test
+2025-10-30 19:32:04,380 - main - INFO - Tech stack: frontend=<TechStackOptions.REACT: 'React'> backend=<TechStackOptions.FASTAPI: 'FastAPI'> database=<TechStackOptions.POSTGRESQL: 'PostgreSQL'>
+2025-10-30 19:32:04,380 - main - INFO - Description length: 73 characters
+2025-10-30 19:32:04,380 - services.openai_service - INFO - Starting code generation for project: api-test
+2025-10-30 19:32:04,381 - services.openai_service - INFO - Image processed successfully
+2025-10-30 19:32:04,382 - services.openai_service - INFO - Sending request to OpenAI API
+2025-10-30 19:32:44,002 - services.openai_service - INFO - OpenAI API response received, parsing content
+2025-10-30 19:32:44,006 - services.openai_service - INFO - Code generation completed successfully - 12 files generated
+2025-10-30 19:32:44,007 - main - INFO - Code generation completed successfully - 12 files generated
+2025-10-30 19:34:31,738 - main - INFO - Code generation request for project: generate-simple-application-sa
+2025-10-30 19:34:31,741 - main - INFO - Tech stack: frontend=<TechStackOptions.REACT: 'React'> backend=<TechStackOptions.FASTAPI: 'FastAPI'> database=<TechStackOptions.POSTGRESQL: 'PostgreSQL'>
+2025-10-30 19:34:31,741 - main - INFO - Description length: 47 characters
+2025-10-30 19:34:31,741 - services.openai_service - INFO - Starting code generation for project: generate-simple-application-sa
+2025-10-30 19:34:32,013 - services.openai_service - INFO - Image processed successfully
+2025-10-30 19:34:32,014 - services.openai_service - INFO - Sending request to OpenAI API
+2025-10-30 19:35:19,237 - services.openai_service - INFO - OpenAI API response received, parsing content
+2025-10-30 19:35:19,241 - services.openai_service - INFO - Code generation completed successfully - 13 files generated
+2025-10-30 19:35:19,241 - main - INFO - Code generation completed successfully - 13 files generated
+2025-10-30 19:46:14,740 - main - INFO - Code generation request for project: generate-the-simple-applicatio
+2025-10-30 19:46:14,743 - main - INFO - Tech stack: frontend=<TechStackOptions.REACT: 'React'> backend=<TechStackOptions.FASTAPI: 'FastAPI'> database=<TechStackOptions.POSTGRESQL: 'PostgreSQL'>
+2025-10-30 19:46:14,743 - main - INFO - Description length: 54 characters
+2025-10-30 19:46:14,743 - services.openai_service - INFO - Starting code generation for project: generate-the-simple-applicatio
+2025-10-30 19:46:14,746 - services.openai_service - INFO - Image processed successfully
+2025-10-30 19:46:14,746 - services.openai_service - INFO - Sending request to OpenAI API
+2025-10-30 19:46:52,486 - services.openai_service - INFO - OpenAI API response received, parsing content
+2025-10-30 19:46:52,488 - services.openai_service - INFO - Code generation completed successfully - 11 files generated
+2025-10-30 19:46:52,488 - main - INFO - Code generation completed successfully - 11 files generated
+2025-10-30 19:48:12,151 - main - INFO - Code generation request for project: generate-simple-application-sa
+2025-10-30 19:48:12,152 - main - INFO - Tech stack: frontend=<TechStackOptions.REACT: 'React'> backend=<TechStackOptions.FASTAPI: 'FastAPI'> database=<TechStackOptions.POSTGRESQL: 'PostgreSQL'>
+2025-10-30 19:48:12,153 - main - INFO - Description length: 50 characters
+2025-10-30 19:48:12,153 - services.openai_service - INFO - Starting code generation for project: generate-simple-application-sa
+2025-10-30 19:48:12,154 - services.openai_service - INFO - Image processed successfully
+2025-10-30 19:48:12,155 - services.openai_service - INFO - Sending request to OpenAI API
+2025-10-30 19:48:49,791 - services.openai_service - INFO - OpenAI API response received, parsing content
+2025-10-30 19:48:49,795 - services.openai_service - INFO - Code generation completed successfully - 11 files generated
+2025-10-30 19:48:49,795 - main - INFO - Code generation completed successfully - 11 files generated
+2025-11-08 08:47:39,517 - main - INFO - Starting R-Net AI Backend Service...
+2025-11-08 08:47:40,140 - main - INFO - ✓ OpenAI API connection successful
+2025-11-08 08:48:07,541 - main - INFO - Shutting down R-Net AI Backend Service...
+2025-11-08 08:48:38,848 - main - INFO - Starting R-Net AI Backend Service...
+2025-11-08 08:48:39,316 - main - INFO - ✓ OpenAI API connection successful
+2025-11-08 08:49:08,709 - main - INFO - Code generation request for project: generate-a-productionready-ful
+2025-11-08 08:49:08,710 - main - INFO - Tech stack: frontend=<TechStackOptions.REACT: 'React'> backend=<TechStackOptions.FASTAPI: 'FastAPI'> database=<TechStackOptions.POSTGRESQL: 'PostgreSQL'>
+2025-11-08 08:49:08,710 - main - INFO - Description length: 8201 characters
+2025-11-08 08:49:08,710 - services.openai_service - INFO - Starting code generation for project: generate-a-productionready-ful
+2025-11-08 08:49:08,950 - services.openai_service - INFO - Image processed successfully
+2025-11-08 08:49:08,950 - services.openai_service - INFO - Sending request to OpenAI API
+2025-11-08 08:49:09,590 - services.openai_service - ERROR - OpenAI API error: Error code: 400 - {'error': {'message': 'litellm.BadRequestError: AzureException - Invalid image data.. Received Model Group=GPT-4o-mini\nAvailable Model Group Fallbacks=None', 'type': None, 'param': None, 'code': '400'}}
+2025-11-08 08:49:09,591 - services.openai_service - ERROR - Validation error: OpenAI API error: Error code: 400 - {'error': {'message': 'litellm.BadRequestError: AzureException - Invalid image data.. Received Model Group=GPT-4o-mini\nAvailable Model Group Fallbacks=None', 'type': None, 'param': None, 'code': '400'}}
+2025-11-08 08:49:09,591 - main - ERROR - Validation error: OpenAI API error: Error code: 400 - {'error': {'message': 'litellm.BadRequestError: AzureException - Invalid image data.. Received Model Group=GPT-4o-mini\nAvailable Model Group Fallbacks=None', 'type': None, 'param': None, 'code': '400'}}
+2025-11-08 08:50:39,731 - main - INFO - Code generation request for project: generate-a-productionready-ful
+2025-11-08 08:50:39,733 - main - INFO - Tech stack: frontend=<TechStackOptions.REACT: 'React'> backend=<TechStackOptions.FASTAPI: 'FastAPI'> database=<TechStackOptions.POSTGRESQL: 'PostgreSQL'>
+2025-11-08 08:50:39,733 - main - INFO - Description length: 8201 characters
+2025-11-08 08:50:39,734 - services.openai_service - INFO - Starting code generation for project: generate-a-productionready-ful
+2025-11-08 08:50:39,736 - services.openai_service - INFO - Image processed successfully
+2025-11-08 08:50:39,736 - services.openai_service - INFO - Sending request to OpenAI API
+2025-11-08 08:50:53,056 - services.openai_service - INFO - OpenAI API response received, parsing content
+2025-11-08 08:50:53,057 - services.openai_service - INFO - Code generation completed successfully - 5 files generated
+2025-11-08 08:50:53,057 - main - INFO - Code generation completed successfully - 5 files generated
+2025-11-08 08:57:35,542 - main - INFO - Code generation request for project: -detailed-requirements-prompt-
+2025-11-08 08:57:35,543 - main - INFO - Tech stack: frontend=<TechStackOptions.REACT: 'React'> backend=<TechStackOptions.FASTAPI: 'FastAPI'> database=<TechStackOptions.POSTGRESQL: 'PostgreSQL'>
+2025-11-08 08:57:35,543 - main - INFO - Description length: 10695 characters
+2025-11-08 08:57:35,543 - services.openai_service - INFO - Starting code generation for project: -detailed-requirements-prompt-
+2025-11-08 08:57:35,544 - services.openai_service - INFO - Image processed successfully
+2025-11-08 08:57:35,544 - services.openai_service - INFO - Sending request to OpenAI API
+2025-11-08 08:57:54,577 - services.openai_service - INFO - OpenAI API response received, parsing content
+2025-11-08 08:57:54,579 - services.openai_service - INFO - Code generation completed successfully - 8 files generated
+2025-11-08 08:57:54,579 - main - INFO - Code generation completed successfully - 8 files generated
+2025-11-08 09:02:08,064 - watchfiles.main - INFO - 1 change detected
+2025-11-08 09:02:08,235 - main - INFO - Shutting down R-Net AI Backend Service...
+2025-11-08 09:02:08,605 - watchfiles.main - INFO - 2 changes detected
+2025-11-08 09:02:09,077 - main - INFO - Starting R-Net AI Backend Service...
+2025-11-08 09:02:09,591 - main - INFO - ✓ OpenAI API connection successful
+2025-11-08 09:02:24,008 - watchfiles.main - INFO - 1 change detected
+2025-11-08 09:02:24,151 - main - INFO - Shutting down R-Net AI Backend Service...
+2025-11-08 09:02:24,517 - watchfiles.main - INFO - 4 changes detected
+2025-11-08 09:02:24,689 - main - INFO - Starting R-Net AI Backend Service...
+2025-11-08 09:02:24,882 - watchfiles.main - INFO - 3 changes detected
+2025-11-08 09:02:25,204 - main - INFO - ✓ OpenAI API connection successful
+2025-11-08 09:02:27,552 - watchfiles.main - INFO - 1 change detected
+2025-11-08 09:02:27,732 - main - INFO - Shutting down R-Net AI Backend Service...
+2025-11-08 09:02:28,096 - watchfiles.main - INFO - 4 changes detected
+2025-11-08 09:02:28,128 - main - INFO - Starting R-Net AI Backend Service...
+2025-11-08 09:02:28,556 - main - INFO - ✓ OpenAI API connection successful
+2025-11-08 09:02:32,648 - watchfiles.main - INFO - 1 change detected
+2025-11-08 09:02:32,804 - main - INFO - Shutting down R-Net AI Backend Service...
+2025-11-08 09:02:33,173 - watchfiles.main - INFO - 1 change detected
+2025-11-08 09:02:33,224 - main - INFO - Starting R-Net AI Backend Service...
+2025-11-08 09:02:33,538 - watchfiles.main - INFO - 3 changes detected
+2025-11-08 09:02:33,650 - main - INFO - ✓ OpenAI API connection successful
+2025-11-08 09:02:50,710 - watchfiles.main - INFO - 1 change detected
+2025-11-08 09:02:50,843 - main - INFO - Shutting down R-Net AI Backend Service...
+2025-11-08 09:02:51,221 - watchfiles.main - INFO - 4 changes detected
+2025-11-08 09:02:51,393 - main - INFO - Starting R-Net AI Backend Service...
+2025-11-08 09:02:51,758 - main - INFO - ✓ OpenAI API connection successful
+2025-11-08 09:03:12,705 - watchfiles.main - INFO - 1 change detected
+2025-11-08 09:03:12,885 - main - INFO - Shutting down R-Net AI Backend Service...
+2025-11-08 09:03:13,251 - watchfiles.main - INFO - 4 changes detected
+2025-11-08 09:03:13,409 - main - INFO - Starting R-Net AI Backend Service...
+2025-11-08 09:03:13,915 - main - INFO - ✓ OpenAI API connection successful
+2025-11-08 09:27:01,370 - main - INFO - Code generation request for project: context-i-need-a-modern-secure
+2025-11-08 09:27:01,372 - main - INFO - Tech stack: frontend=<TechStackOptions.REACT: 'React'> backend=<TechStackOptions.FASTAPI: 'FastAPI'> database=<TechStackOptions.POSTGRESQL: 'PostgreSQL'>
+2025-11-08 09:27:01,372 - main - INFO - Description length: 8726 characters
+2025-11-08 09:27:01,372 - services.openai_service - INFO - Starting code generation for project: context-i-need-a-modern-secure
+2025-11-08 09:27:01,505 - services.openai_service - INFO - Image processed successfully
+2025-11-08 09:27:01,506 - services.openai_service - INFO - Sending request to OpenAI API
+2025-11-08 09:27:22,629 - services.openai_service - INFO - OpenAI API response received, parsing content
+2025-11-08 09:27:22,630 - services.openai_service - INFO - Code generation completed successfully - 11 files generated
+2025-11-08 09:27:22,630 - main - INFO - Code generation completed successfully - 11 files generated
+2025-11-08 09:29:10,581 - watchfiles.main - INFO - 1 change detected
+2025-11-08 09:29:10,759 - main - INFO - Shutting down R-Net AI Backend Service...
+2025-11-08 09:29:11,133 - watchfiles.main - INFO - 1 change detected
+2025-11-08 09:29:11,431 - main - INFO - Starting R-Net AI Backend Service...
+2025-11-08 09:29:11,495 - watchfiles.main - INFO - 3 changes detected
+2025-11-08 09:29:11,957 - main - INFO - ✓ OpenAI API connection successful
+2025-11-08 09:29:41,492 - watchfiles.main - INFO - 1 change detected
+2025-11-08 09:29:41,690 - main - INFO - Shutting down R-Net AI Backend Service...
+2025-11-08 09:29:42,054 - watchfiles.main - INFO - 1 change detected
+2025-11-08 09:29:42,230 - main - INFO - Starting R-Net AI Backend Service...
+2025-11-08 09:29:42,418 - watchfiles.main - INFO - 3 changes detected
+2025-11-08 09:29:42,744 - main - INFO - ✓ OpenAI API connection successful
+2025-11-08 09:30:43,420 - watchfiles.main - INFO - 1 change detected
+2025-11-08 09:30:43,535 - main - INFO - Shutting down R-Net AI Backend Service...
+2025-11-08 09:30:43,907 - watchfiles.main - INFO - 1 change detected
+2025-11-08 09:30:44,118 - main - INFO - Starting R-Net AI Backend Service...
+2025-11-08 09:30:44,272 - watchfiles.main - INFO - 3 changes detected
+2025-11-08 09:30:44,578 - main - INFO - ✓ OpenAI API connection successful
+2025-11-08 09:31:17,036 - watchfiles.main - INFO - 1 change detected
+2025-11-08 09:31:17,138 - main - INFO - Shutting down R-Net AI Backend Service...
+2025-11-08 09:31:17,501 - watchfiles.main - INFO - 1 change detected
+2025-11-08 09:31:17,706 - main - INFO - Starting R-Net AI Backend Service...
+2025-11-08 09:31:17,867 - watchfiles.main - INFO - 3 changes detected
+2025-11-08 09:31:18,216 - main - INFO - ✓ OpenAI API connection successful
+2025-11-08 09:31:39,655 - watchfiles.main - INFO - 1 change detected
+2025-11-08 09:31:39,855 - main - INFO - Shutting down R-Net AI Backend Service...
+2025-11-08 09:31:40,223 - watchfiles.main - INFO - 1 change detected
+2025-11-08 09:31:40,367 - main - INFO - Starting R-Net AI Backend Service...
+2025-11-08 09:31:40,584 - watchfiles.main - INFO - 3 changes detected
+2025-11-08 09:31:40,876 - main - INFO - ✓ OpenAI API connection successful
+2025-11-08 09:32:05,959 - watchfiles.main - INFO - 1 change detected
+2025-11-08 09:32:06,065 - main - INFO - Shutting down R-Net AI Backend Service...
+2025-11-08 09:32:06,433 - watchfiles.main - INFO - 1 change detected
+2025-11-08 09:32:06,594 - main - INFO - Starting R-Net AI Backend Service...
+2025-11-08 09:32:06,792 - watchfiles.main - INFO - 3 changes detected
+2025-11-08 09:32:07,085 - main - INFO - ✓ OpenAI API connection successful
+2025-11-08 09:36:47,653 - watchfiles.main - INFO - 1 change detected
+2025-11-08 09:36:47,821 - main - INFO - Shutting down R-Net AI Backend Service...
+2025-11-08 09:36:48,201 - watchfiles.main - INFO - 1 change detected
+2025-11-08 09:36:48,418 - main - INFO - Starting R-Net AI Backend Service...
+2025-11-08 09:36:48,567 - watchfiles.main - INFO - 3 changes detected
+2025-11-08 09:36:49,560 - main - INFO - ✓ OpenAI API connection successful
+2025-11-08 09:38:45,115 - main - INFO - Code generation request for project: please-generate-the-student-ma
+2025-11-08 09:38:45,116 - main - INFO - Tech stack: frontend=<TechStackOptions.REACT: 'React'> backend=<TechStackOptions.FASTAPI: 'FastAPI'> database=<TechStackOptions.POSTGRESQL: 'PostgreSQL'>
+2025-11-08 09:38:45,116 - main - INFO - Description length: 50 characters
+2025-11-08 09:38:45,116 - services.openai_service - INFO - Starting code generation for project: please-generate-the-student-ma
+2025-11-08 09:38:45,162 - services.openai_service - INFO - Image processed successfully
+2025-11-08 09:38:45,162 - services.openai_service - INFO - Sending request to OpenAI API
+2025-11-08 09:39:04,680 - services.openai_service - INFO - OpenAI API response received, parsing content
+2025-11-08 09:39:04,682 - services.openai_service - INFO - Code generation completed successfully - 2 files generated
+2025-11-08 09:39:04,683 - main - INFO - Code generation completed successfully - 2 files generated
+2025-11-08 09:40:37,487 - main - INFO - Starting R-Net AI Backend Service...
+2025-11-08 09:40:38,032 - main - INFO - ✓ OpenAI API connection successful
+2025-11-08 09:40:51,585 - main - INFO - Shutting down R-Net AI Backend Service...
+2025-11-08 09:40:59,527 - main - INFO - Starting R-Net AI Backend Service...
+2025-11-08 09:41:00,104 - main - INFO - ✓ OpenAI API connection successful
+2025-11-08 09:41:14,461 - main - INFO - Shutting down R-Net AI Backend Service...
+2025-11-08 09:41:26,745 - main - INFO - Starting R-Net AI Backend Service...
+2025-11-08 09:41:27,242 - main - INFO - ✓ OpenAI API connection successful
+2025-11-08 09:42:17,959 - main - INFO - Code generation request for project: context-i-need-a-modern-secure
+2025-11-08 09:42:17,960 - main - INFO - Tech stack: frontend=<TechStackOptions.REACT: 'React'> backend=<TechStackOptions.FASTAPI: 'FastAPI'> database=<TechStackOptions.POSTGRESQL: 'PostgreSQL'>
+2025-11-08 09:42:17,961 - main - INFO - Description length: 8726 characters
+2025-11-08 09:42:17,961 - services.openai_service - INFO - Starting code generation for project: context-i-need-a-modern-secure
+2025-11-08 09:42:17,988 - services.openai_service - INFO - Image processed successfully
+2025-11-08 09:42:17,988 - services.openai_service - INFO - Sending request to OpenAI API
+2025-11-08 09:42:35,523 - services.openai_service - INFO - OpenAI API response received, parsing content
+2025-11-08 09:42:35,525 - services.openai_service - INFO - Code generation completed successfully - 7 files generated
+2025-11-08 09:42:35,526 - main - INFO - Code generation completed successfully - 7 files generated
+2025-11-08 09:50:20,933 - watchfiles.main - INFO - 1 change detected
+2025-11-08 09:50:21,068 - main - INFO - Shutting down R-Net AI Backend Service...
+2025-11-08 09:50:21,441 - watchfiles.main - INFO - 1 change detected
+2025-11-08 09:50:21,644 - main - INFO - Starting R-Net AI Backend Service...
+2025-11-08 09:50:22,177 - main - INFO - ✓ OpenAI API connection successful
+2025-11-08 09:50:55,913 - watchfiles.main - INFO - 1 change detected
+2025-11-08 09:50:56,060 - main - INFO - Shutting down R-Net AI Backend Service...
+2025-11-08 09:50:56,481 - watchfiles.main - INFO - 4 changes detected
+2025-11-08 09:50:56,628 - main - INFO - Starting R-Net AI Backend Service...
+2025-11-08 09:50:56,846 - watchfiles.main - INFO - 3 changes detected
+2025-11-08 09:50:57,124 - main - INFO - ✓ OpenAI API connection successful
+2025-11-08 09:52:54,399 - watchfiles.main - INFO - 1 change detected
+2025-11-08 09:52:54,602 - main - INFO - Shutting down R-Net AI Backend Service...
+2025-11-08 09:52:55,030 - watchfiles.main - INFO - 4 changes detected
+2025-11-08 09:52:55,177 - main - INFO - Starting R-Net AI Backend Service...
+2025-11-08 09:52:55,697 - main - INFO - ✓ OpenAI API connection successful
+2025-11-08 09:54:21,617 - watchfiles.main - INFO - 2 changes detected
+2025-11-08 09:54:21,770 - main - INFO - Shutting down R-Net AI Backend Service...
+2025-11-08 09:54:22,197 - watchfiles.main - INFO - 4 changes detected
+2025-11-08 09:54:22,334 - main - INFO - Starting R-Net AI Backend Service...
+2025-11-08 09:54:22,556 - watchfiles.main - INFO - 3 changes detected
+2025-11-08 09:54:22,862 - main - INFO - ✓ OpenAI API connection successful
+2025-11-08 10:00:39,490 - main - INFO - Code generation request for project: context-i-need-a-modern-secure
+2025-11-08 10:00:39,492 - main - INFO - Tech stack: frontend=<TechStackOptions.REACT: 'React'> backend=<TechStackOptions.FASTAPI: 'FastAPI'> database=<TechStackOptions.POSTGRESQL: 'PostgreSQL'>
+2025-11-08 10:00:39,492 - main - INFO - Description length: 8726 characters
+2025-11-08 10:00:39,492 - services.openai_service - INFO - Starting code generation for project: context-i-need-a-modern-secure
+2025-11-08 10:00:39,551 - services.openai_service - INFO - Image processed successfully
+2025-11-08 10:00:39,553 - services.openai_service - INFO - Sending request to OpenAI API
+2025-11-08 10:00:58,406 - services.openai_service - INFO - OpenAI API response received, parsing content
+2025-11-08 10:00:58,407 - services.openai_service - INFO - Code generation completed successfully - 5 files generated
+2025-11-08 10:00:58,408 - main - INFO - Code generation completed successfully - 5 files generated
+2025-11-08 10:02:06,199 - watchfiles.main - INFO - 1 change detected
+2025-11-08 10:05:43,358 - main - INFO - Code generation request for project: generate-the-student-managemen
+2025-11-08 10:05:43,361 - main - INFO - Tech stack: frontend=<TechStackOptions.REACT: 'React'> backend=<TechStackOptions.FASTAPI: 'FastAPI'> database=<TechStackOptions.POSTGRESQL: 'PostgreSQL'>
+2025-11-08 10:05:43,361 - main - INFO - Description length: 228 characters
+2025-11-08 10:05:43,362 - services.openai_service - INFO - Starting code generation for project: generate-the-student-managemen
+2025-11-08 10:05:43,363 - services.openai_service - INFO - Image processed successfully
+2025-11-08 10:05:43,363 - services.openai_service - INFO - Sending request to OpenAI API
+2025-11-08 10:06:32,296 - services.openai_service - INFO - OpenAI API response received, parsing content
+2025-11-08 10:06:32,299 - services.openai_service - INFO - Code generation completed successfully - 17 files generated
+2025-11-08 10:06:32,299 - main - INFO - Code generation completed successfully - 17 files generated
+2025-11-08 10:09:26,217 - watchfiles.main - INFO - 2 changes detected
+2025-11-08 10:09:26,360 - main - INFO - Shutting down R-Net AI Backend Service...
+2025-11-08 10:09:26,736 - watchfiles.main - INFO - 2 changes detected
+2025-11-08 10:09:27,199 - main - INFO - Starting R-Net AI Backend Service...
+2025-11-08 10:09:27,612 - main - INFO - ✓ OpenAI API connection successful
+2025-11-08 10:09:44,286 - watchfiles.main - INFO - 1 change detected
+2025-11-08 10:09:44,401 - main - INFO - Shutting down R-Net AI Backend Service...
+2025-11-08 10:09:44,777 - watchfiles.main - INFO - 1 change detected
+2025-11-08 10:09:44,931 - main - INFO - Starting R-Net AI Backend Service...
+2025-11-08 10:09:45,430 - main - INFO - ✓ OpenAI API connection successful
+2025-11-08 10:10:01,594 - watchfiles.main - INFO - 1 change detected
+2025-11-08 10:10:01,716 - main - INFO - Shutting down R-Net AI Backend Service...
+2025-11-08 10:10:02,088 - watchfiles.main - INFO - 1 change detected
+2025-11-08 10:10:02,289 - main - INFO - Starting R-Net AI Backend Service...
+2025-11-08 10:10:02,824 - main - INFO - ✓ OpenAI API connection successful
+2025-11-08 10:10:21,713 - watchfiles.main - INFO - 1 change detected
+2025-11-08 10:10:21,832 - main - INFO - Shutting down R-Net AI Backend Service...
+2025-11-08 10:10:22,203 - watchfiles.main - INFO - 1 change detected
+2025-11-08 10:10:22,362 - main - INFO - Starting R-Net AI Backend Service...
+2025-11-08 10:10:22,880 - main - INFO - ✓ OpenAI API connection successful
+2025-11-08 10:10:49,740 - watchfiles.main - INFO - 1 change detected
+2025-11-08 10:10:49,896 - main - INFO - Shutting down R-Net AI Backend Service...
+2025-11-08 10:10:50,268 - watchfiles.main - INFO - 1 change detected
+2025-11-08 10:10:50,522 - main - INFO - Starting R-Net AI Backend Service...
+2025-11-08 10:10:50,985 - main - INFO - ✓ OpenAI API connection successful
+2025-11-08 10:12:23,649 - main - INFO - Code generation request for project: -functional-requirements-stude
+2025-11-08 10:12:23,653 - main - INFO - Tech stack: frontend=<TechStackOptions.REACT: 'React'> backend=<TechStackOptions.FASTAPI: 'FastAPI'> database=<TechStackOptions.POSTGRESQL: 'PostgreSQL'>
+2025-11-08 10:12:23,653 - main - INFO - Description length: 970 characters
+2025-11-08 10:12:23,653 - services.openai_service - INFO - Starting code generation for project: -functional-requirements-stude
+2025-11-08 10:12:23,697 - services.openai_service - INFO - Image processed successfully
+2025-11-08 10:12:23,698 - services.openai_service - INFO - Sending request to OpenAI API
+2025-11-08 10:13:12,528 - services.openai_service - INFO - OpenAI API response received, parsing content
+2025-11-08 10:13:12,528 - services.openai_service - ERROR - Failed to parse generated content: Expecting ',' delimiter: line 103 column 6 (char 14985)
+2025-11-08 10:13:12,529 - services.openai_service - INFO - Code generation completed successfully - 1 files generated
+2025-11-08 10:13:12,529 - main - INFO - Code generation completed successfully - 1 files generated
+2025-11-08 10:14:35,639 - watchfiles.main - INFO - 1 change detected
+2025-11-08 10:14:35,775 - main - INFO - Shutting down R-Net AI Backend Service...
+2025-11-08 10:14:36,150 - watchfiles.main - INFO - 1 change detected
+2025-11-08 10:14:36,418 - middleware.security - WARNING - Generated default API key: rnet_dev_GaSj5UQOVbl2PCHIMF3joWjBCBvYaP1DqrSrTmcjgSw
+2025-11-08 10:14:36,508 - watchfiles.main - INFO - 14 changes detected
+2025-11-08 10:14:53,755 - watchfiles.main - INFO - 1 change detected
+2025-11-08 10:14:54,270 - middleware.security - WARNING - Generated default API key: rnet_dev_q-IZQf342VV9Y_NlJ-q8Eqr5ut6wl0UUV4T7j_hpvDM
+2025-11-08 10:14:54,340 - watchfiles.main - INFO - 4 changes detected
+2025-11-08 10:14:55,243 - watchfiles.main - INFO - 1 change detected
+2025-11-08 10:14:55,621 - middleware.security - WARNING - Generated default API key: rnet_dev_PbJbQ9qWTj7umCukCf3CPz5DsKuswyDh_MSgey550Ls
+2025-11-08 10:14:55,717 - watchfiles.main - INFO - 1 change detected
+2025-11-08 10:14:56,083 - watchfiles.main - INFO - 1 change detected
+2025-11-08 10:14:56,502 - watchfiles.main - INFO - 1 change detected
+2025-11-08 10:14:56,866 - middleware.security - WARNING - Generated default API key: rnet_dev_vfL2VR2mpjlPMML6wxOIBxDvooBChwlqyhRPbkIXEbk
+2025-11-08 10:14:56,968 - watchfiles.main - INFO - 7 changes detected
+2025-11-08 10:14:57,334 - watchfiles.main - INFO - 1 change detected
+2025-11-08 10:14:57,733 - middleware.security - WARNING - Generated default API key: rnet_dev_wyI6glraanG5uboAf-pP7KePESkfxzjwf047UW6kXRg
+2025-11-08 10:14:57,806 - watchfiles.main - INFO - 4 changes detected
+2025-11-08 10:14:58,811 - watchfiles.main - INFO - 1 change detected
+2025-11-08 10:14:59,208 - middleware.security - WARNING - Generated default API key: rnet_dev_UwJDyS7ubPcHWTDd_Fg770vVzwq6Yt65eLCS0mhz5gg
+2025-11-08 10:14:59,328 - watchfiles.main - INFO - 1 change detected
+2025-11-08 10:15:02,822 - watchfiles.main - INFO - 1 change detected
+2025-11-08 10:15:03,209 - middleware.security - WARNING - Generated default API key: rnet_dev_ogQjRjEqyHZRAuSXX8HryM7ph3Ae5sMkrZImKH5fFkM
+2025-11-08 10:15:03,297 - watchfiles.main - INFO - 1 change detected
+2025-11-08 10:15:17,482 - watchfiles.main - INFO - 1 change detected
+2025-11-08 10:15:17,982 - middleware.security - WARNING - Generated default API key: rnet_dev_XgVRjAmQSAWjYkg5XLKzTdKXfkKjnBp7Bvv5c1menuk
+2025-11-08 10:15:18,057 - watchfiles.main - INFO - 1 change detected
+2025-11-08 10:15:19,616 - watchfiles.main - INFO - 1 change detected
+2025-11-08 10:15:19,980 - middleware.security - WARNING - Generated default API key: rnet_dev_AWbrvEeH6_lDETBEsDQ2GUD2kmhHuJ9j6Z7xB9YgP9Y
+2025-11-08 10:15:20,082 - watchfiles.main - INFO - 1 change detected
+2025-11-08 10:15:57,737 - watchfiles.main - INFO - 1 change detected
+2025-11-08 10:15:58,276 - middleware.security - WARNING - Generated default API key: rnet_dev_WR97L78vcKdbYHulJETGunETKR7fi1ZtPACLoWVRNbs
+2025-11-08 10:15:58,375 - watchfiles.main - INFO - 1 change detected
+2025-11-08 10:16:01,495 - watchfiles.main - INFO - 1 change detected
+2025-11-08 10:16:01,883 - middleware.security - WARNING - Generated default API key: rnet_dev_IggufYfmkGRmLkSgDNrATV1-6ZtVoVlcrDqVM1pls1A
+2025-11-08 10:16:01,968 - watchfiles.main - INFO - 1 change detected
+2025-11-08 10:16:11,275 - watchfiles.main - INFO - 1 change detected
+2025-11-08 10:16:11,787 - middleware.security - WARNING - Generated default API key: rnet_dev_BlA-9BGtz3H47jxMWV_AN8NVUjGl3AV0Z7XfWiRuye0
+2025-11-08 10:16:11,904 - watchfiles.main - INFO - 1 change detected
+2025-11-08 10:16:14,692 - watchfiles.main - INFO - 1 change detected
+2025-11-08 10:16:15,099 - middleware.security - WARNING - Generated default API key: rnet_dev_YpezxDiyVDJkYQlRdqUVJqPHFjQmOUokoDiohRNzkMw
+2025-11-08 10:16:15,217 - watchfiles.main - INFO - 1 change detected
+2025-11-08 10:16:21,441 - watchfiles.main - INFO - 1 change detected
+2025-11-08 10:16:21,829 - middleware.security - WARNING - Generated default API key: rnet_dev_ClaIweTtUX13g0H8cY1qWYs5W-WO8zI7XiAgXISrj9Y
+2025-11-08 10:16:21,908 - watchfiles.main - INFO - 4 changes detected
+2025-11-08 10:16:35,486 - watchfiles.main - INFO - 1 change detected
+2025-11-08 10:16:35,999 - middleware.security - WARNING - Generated default API key: rnet_dev_Rmp88m_EFD-H30Ri6RKOwk5IyhSIyswsPs7rHpAT-W8
+2025-11-08 10:16:36,070 - watchfiles.main - INFO - 4 changes detected
+2025-11-08 10:16:37,200 - watchfiles.main - INFO - 1 change detected
+2025-11-08 10:16:37,564 - watchfiles.main - INFO - 3 changes detected
+2025-11-08 10:16:37,585 - middleware.security - WARNING - Generated default API key: rnet_dev_CMCm_8z_Hrqr-_W4qkpR0-RqSKIj3lEs8ElIurBDw_c
+2025-11-08 10:16:37,928 - watchfiles.main - INFO - 1 change detected
+2025-11-08 10:16:40,925 - watchfiles.main - INFO - 1 change detected
+2025-11-08 10:16:41,293 - watchfiles.main - INFO - 3 changes detected
+2025-11-08 10:16:41,332 - middleware.security - WARNING - Generated default API key: rnet_dev_-1en1XcRxTPCfCtkn3Nn5ChVhke8LhJTMxTnCFbhoiA
+2025-11-08 10:16:41,657 - watchfiles.main - INFO - 1 change detected
+2025-11-08 10:17:32,885 - middleware.security - WARNING - Generated default API key: rnet_dev_OnZU4qP62ufhOFvfkzoCeKlbuRHg516Si1RX5wXwjzY
+2025-11-08 10:18:02,791 - middleware.security - WARNING - Generated default API key: rnet_dev_DivTuimERp9THkH7dI2qVlLUydqq6vVt72OD9b4E7Vg
+2025-11-08 10:18:03,176 - middleware.security - WARNING - Generated default API key: rnet_dev_LegDjApBjryt_jXH1y5afFgZ5gw618rUXpGkqEHeEE8
+2025-11-08 10:18:03,211 - main - INFO - Starting R-Net AI Backend Service...
+2025-11-08 10:18:03,324 - watchfiles.main - INFO - 4 changes detected
+2025-11-08 10:18:03,732 - main - INFO - ✓ OpenAI API connection successful
+2025-11-08 10:18:28,120 - main - INFO - Shutting down R-Net AI Backend Service...
+2025-11-08 10:18:40,599 - middleware.security - WARNING - Generated default API key: rnet_dev_MJCW2pB_lmI4hVkDTOuL51qhWxNQPZ8I1KRFGzrFfM4
+2025-11-08 10:18:40,993 - middleware.security - WARNING - Generated default API key: rnet_dev_3K1Lk2cPUDkp65lGSJ-GgtSjKxyxk7Zb6XnFXt11dEY
+2025-11-08 10:18:41,024 - main - INFO - Starting R-Net AI Backend Service...
+2025-11-08 10:18:41,081 - watchfiles.main - INFO - 1 change detected
+2025-11-08 10:18:41,472 - main - INFO - ✓ OpenAI API connection successful
+2025-11-08 10:24:18,015 - watchfiles.main - INFO - 1 change detected
+2025-11-08 10:24:18,258 - main - INFO - Shutting down R-Net AI Backend Service...
+2025-11-08 10:24:18,634 - watchfiles.main - INFO - 1 change detected
+2025-11-08 10:24:18,861 - middleware.security - WARNING - Generated default API key: rnet_dev_9LLb0MFGqCE9APPHfU2TD4kyrzNuOYMpw4LAzitCB6M
+2025-11-08 10:24:18,893 - main - INFO - Starting R-Net AI Backend Service...
+2025-11-08 10:24:18,997 - watchfiles.main - INFO - 4 changes detected
+2025-11-08 10:24:19,326 - main - INFO - ✓ OpenAI API connection successful
+2025-11-08 10:24:29,946 - watchfiles.main - INFO - 1 change detected
+2025-11-08 10:24:30,149 - main - INFO - Shutting down R-Net AI Backend Service...
+2025-11-08 10:24:30,514 - watchfiles.main - INFO - 1 change detected
+2025-11-08 10:24:30,655 - middleware.security - WARNING - Generated default API key: rnet_dev_FciTcO1_vALqklxzRFpW3bSh9L_rqmsQX9XnT13c2xE
+2025-11-08 10:24:30,680 - main - INFO - Starting R-Net AI Backend Service...
+2025-11-08 10:24:30,880 - watchfiles.main - INFO - 4 changes detected
+2025-11-08 10:24:31,195 - main - INFO - ✓ OpenAI API connection successful
+2025-11-08 10:24:41,501 - watchfiles.main - INFO - 1 change detected
+2025-11-08 10:24:41,606 - main - INFO - Shutting down R-Net AI Backend Service...
+2025-11-08 10:24:41,974 - watchfiles.main - INFO - 1 change detected
+2025-11-08 10:24:42,146 - middleware.security - WARNING - Generated default API key: rnet_dev_NZPUw3V4LwCF5cYZLURJSEdH3TsJvUkBWNGGSgQ-9jw
+2025-11-08 10:24:42,169 - main - INFO - Starting R-Net AI Backend Service...
+2025-11-08 10:24:42,338 - watchfiles.main - INFO - 4 changes detected
+2025-11-08 10:24:42,619 - main - INFO - ✓ OpenAI API connection successful
+2025-11-08 10:24:44,088 - watchfiles.main - INFO - 1 change detected
+2025-11-08 10:24:44,238 - main - INFO - Shutting down R-Net AI Backend Service...
+2025-11-08 10:24:44,606 - watchfiles.main - INFO - 1 change detected
+2025-11-08 10:24:44,636 - middleware.security - WARNING - Generated default API key: rnet_dev_j8Tn5CSp6nMILT6SqjpzS_ujkpQIZKuVjehwulB2VQM
+2025-11-08 10:24:44,653 - main - INFO - Starting R-Net AI Backend Service...
+2025-11-08 10:24:44,972 - watchfiles.main - INFO - 4 changes detected
+2025-11-08 10:24:45,056 - main - INFO - ✓ OpenAI API connection successful
+2025-11-08 10:25:05,339 - middleware.security - WARNING - Generated default API key: rnet_dev_v1HkN7VkDlbZzXCPinL-QdOrqIulNy7QoUrN_PCuqc0
+2025-11-08 10:25:05,716 - middleware.security - WARNING - Generated default API key: rnet_dev_LJN3ylknnJkwI1nk-_znnDIdSs4N0GOcigyU6UTqHbI
+2025-11-08 10:25:05,746 - main - INFO - Starting R-Net AI Backend Service...
+2025-11-08 10:25:05,829 - watchfiles.main - INFO - 1 change detected
+2025-11-08 10:25:06,206 - main - INFO - ✓ OpenAI API connection successful
+2025-11-08 10:26:49,549 - main - INFO - Code generation request for project: -functional-requirements-stude
+2025-11-08 10:26:49,551 - main - INFO - Tech stack: frontend=<TechStackOptions.REACT: 'React'> backend=<TechStackOptions.FASTAPI: 'FastAPI'> database=<TechStackOptions.POSTGRESQL: 'PostgreSQL'>
+2025-11-08 10:26:49,551 - main - INFO - Description length: 970 characters
+2025-11-08 10:26:49,553 - services.openai_service - INFO - Starting code generation for project: -functional-requirements-stude
+2025-11-08 10:26:49,604 - services.openai_service - INFO - Image processed successfully
+2025-11-08 10:26:49,604 - services.openai_service - INFO - Sending request to OpenAI API
+2025-11-08 10:27:34,243 - services.openai_service - INFO - OpenAI API response received, parsing content
+2025-11-08 10:27:34,246 - services.openai_service - INFO - Code generation completed successfully - 16 files generated
+2025-11-08 10:27:34,247 - main - INFO - Code generation completed successfully - 16 files generated
+2025-11-08 10:30:50,277 - main - INFO - Code generation request for project: create-a-student-management-sy
+2025-11-08 10:30:50,278 - main - INFO - Tech stack: frontend=<TechStackOptions.HTML: 'HTML'> backend=<TechStackOptions.FASTAPI: 'FastAPI'> database=<TechStackOptions.POSTGRESQL: 'PostgreSQL'>
+2025-11-08 10:30:50,279 - main - INFO - Description length: 899 characters
+2025-11-08 10:30:50,279 - services.openai_service - INFO - Starting code generation for project: create-a-student-management-sy
+2025-11-08 10:30:50,280 - services.openai_service - INFO - Image processed successfully
+2025-11-08 10:30:50,280 - services.openai_service - INFO - Sending request to OpenAI API
+2025-11-08 10:31:42,456 - services.openai_service - INFO - OpenAI API response received, parsing content
+2025-11-08 10:31:42,459 - services.openai_service - INFO - Code generation completed successfully - 15 files generated
+2025-11-08 10:31:42,460 - main - INFO - Code generation completed successfully - 15 files generated
+2025-11-08 10:33:36,436 - main - INFO - Code generation request for project: generate-student-management-li
+2025-11-08 10:33:36,438 - main - INFO - Tech stack: frontend=<TechStackOptions.REACT: 'React'> backend=<TechStackOptions.FASTAPI: 'FastAPI'> database=<TechStackOptions.POSTGRESQL: 'PostgreSQL'>
+2025-11-08 10:33:36,438 - main - INFO - Description length: 38 characters
+2025-11-08 10:33:36,439 - services.openai_service - INFO - Starting code generation for project: generate-student-management-li
+2025-11-08 10:33:36,440 - services.openai_service - INFO - Image processed successfully
+2025-11-08 10:33:36,440 - services.openai_service - INFO - Sending request to OpenAI API
+2025-11-08 10:34:11,003 - services.openai_service - INFO - OpenAI API response received, parsing content
+2025-11-08 10:34:11,006 - services.openai_service - INFO - Code generation completed successfully - 20 files generated
+2025-11-08 10:34:11,007 - main - INFO - Code generation completed successfully - 20 files generated
+2025-11-08 10:37:33,143 - watchfiles.main - INFO - 1 change detected
+2025-11-08 10:37:33,314 - main - INFO - Shutting down R-Net AI Backend Service...
+2025-11-08 10:37:33,694 - watchfiles.main - INFO - 1 change detected
+2025-11-08 10:37:33,908 - middleware.security - WARNING - Generated default API key: rnet_dev__x2uChFfNG2qaoZuxZjcpr3JinqC82zMogoxgb67Ja8
+2025-11-08 10:37:33,936 - main - INFO - Starting R-Net AI Backend Service...
+2025-11-08 10:37:34,055 - watchfiles.main - INFO - 1 change detected
+2025-11-08 10:37:34,468 - main - INFO - ✓ OpenAI API connection successful
+2025-11-08 10:37:55,098 - watchfiles.main - INFO - 1 change detected
+2025-11-08 10:37:55,207 - main - INFO - Shutting down R-Net AI Backend Service...
+2025-11-08 10:37:55,577 - watchfiles.main - INFO - 1 change detected
+2025-11-08 10:37:55,719 - middleware.security - WARNING - Generated default API key: rnet_dev_0iYjOO0bI4Z4xZZXbkL1cp2ayNZ6TQEgjA13jnynkaw
+2025-11-08 10:37:55,748 - main - INFO - Starting R-Net AI Backend Service...
+2025-11-08 10:37:55,942 - watchfiles.main - INFO - 7 changes detected
+2025-11-08 10:37:56,236 - main - INFO - ✓ OpenAI API connection successful
+2025-11-08 10:38:16,727 - watchfiles.main - INFO - 1 change detected
+2025-11-08 10:38:16,864 - main - INFO - Shutting down R-Net AI Backend Service...
+2025-11-08 10:38:17,233 - watchfiles.main - INFO - 1 change detected
+2025-11-08 10:38:17,384 - middleware.security - WARNING - Generated default API key: rnet_dev_yNCQYcUtpwE6nIKRzw3Cj3ArHl-GUQpu8YRiF9MJBo4
+2025-11-08 10:38:17,409 - main - INFO - Starting R-Net AI Backend Service...
+2025-11-08 10:38:17,596 - watchfiles.main - INFO - 4 changes detected
+2025-11-08 10:38:17,872 - main - INFO - ✓ OpenAI API connection successful
+2025-11-08 10:38:31,720 - watchfiles.main - INFO - 1 change detected
+2025-11-08 10:38:31,834 - main - INFO - Shutting down R-Net AI Backend Service...
+2025-11-08 10:38:32,200 - watchfiles.main - INFO - 1 change detected
+2025-11-08 10:38:32,344 - middleware.security - WARNING - Generated default API key: rnet_dev_AtVFEcEmqp3muXnqtwVi-ohpyLQpTnFA3Oc367H29OM
+2025-11-08 10:38:32,565 - watchfiles.main - INFO - 1 change detected
+2025-11-08 10:38:45,818 - watchfiles.main - INFO - 1 change detected
+2025-11-08 10:38:46,309 - middleware.security - WARNING - Generated default API key: rnet_dev_bNm3GyDfCXqhqdn7cl85oedVed36ef38RjhD9lz85Io
+2025-11-08 10:38:46,342 - main - INFO - Starting R-Net AI Backend Service...
+2025-11-08 10:38:46,454 - watchfiles.main - INFO - 4 changes detected
+2025-11-08 10:38:46,842 - main - INFO - ✓ OpenAI API connection successful
+2025-11-08 10:39:09,685 - watchfiles.main - INFO - 1 change detected
+2025-11-08 10:39:09,796 - main - INFO - Shutting down R-Net AI Backend Service...
+2025-11-08 10:39:10,166 - watchfiles.main - INFO - 1 change detected
+2025-11-08 10:39:10,305 - middleware.security - WARNING - Generated default API key: rnet_dev_8vry5EhaZ0X9prNBMWtYFl58FI7r_LgdFkSD5LXiT5g
+2025-11-08 10:39:10,329 - main - INFO - Starting R-Net AI Backend Service...
+2025-11-08 10:39:10,527 - watchfiles.main - INFO - 4 changes detected
+2025-11-08 10:39:10,836 - main - INFO - ✓ OpenAI API connection successful
+2025-11-08 10:39:20,927 - middleware.security - WARNING - Generated default API key: rnet_dev_3ivR51tqhSH6gAKiy-BRbO4YGmVPPya3s6JAyhX2Dpw
+2025-11-08 10:39:21,365 - middleware.security - WARNING - Generated default API key: rnet_dev_MjwTyMjllu_BJY21Y9E8vRGfp7Zz9ujdAi-VPsOI_Mc
+2025-11-08 10:39:21,389 - main - INFO - Starting R-Net AI Backend Service...
+2025-11-08 10:39:21,466 - watchfiles.main - INFO - 1 change detected
+2025-11-08 10:39:21,831 - main - INFO - ✓ OpenAI API connection successful
+2025-11-08 10:39:43,074 - watchfiles.main - INFO - 1 change detected
+2025-11-08 10:39:43,259 - main - INFO - Shutting down R-Net AI Backend Service...
+2025-11-08 10:39:43,623 - watchfiles.main - INFO - 1 change detected
+2025-11-08 10:39:43,765 - middleware.security - WARNING - Generated default API key: rnet_dev_AJseUlAmjqyIldpXVLZKDW0l5HPENB8K_oIsfCscG38
+2025-11-08 10:39:43,791 - main - INFO - Starting R-Net AI Backend Service...
+2025-11-08 10:39:43,984 - watchfiles.main - INFO - 4 changes detected
+2025-11-08 10:39:44,289 - main - INFO - ✓ OpenAI API connection successful
+2025-11-08 10:39:45,418 - watchfiles.main - INFO - 1 change detected
+2025-11-08 10:39:45,605 - main - INFO - Shutting down R-Net AI Backend Service...
+2025-11-08 10:39:45,971 - watchfiles.main - INFO - 1 change detected
+2025-11-08 10:39:45,987 - middleware.security - WARNING - Generated default API key: rnet_dev_AgySKPoQewOjWcevgl1TGVt5tgNcABUXBXcyUhD15aE
+2025-11-08 10:39:46,004 - main - INFO - Starting R-Net AI Backend Service...
+2025-11-08 10:39:46,333 - watchfiles.main - INFO - 4 changes detected
+2025-11-08 10:39:46,434 - main - INFO - ✓ OpenAI API connection successful
+2025-11-08 10:39:47,922 - watchfiles.main - INFO - 1 change detected
+2025-11-08 10:39:48,053 - main - INFO - Shutting down R-Net AI Backend Service...
+2025-11-08 10:39:48,418 - watchfiles.main - INFO - 1 change detected
+2025-11-08 10:39:48,457 - middleware.security - WARNING - Generated default API key: rnet_dev_8F_nm-4-bg0Nk7sfM_3Dl826TZ73tlGOWTl4tvKs61Y
+2025-11-08 10:39:48,474 - main - INFO - Starting R-Net AI Backend Service...
+2025-11-08 10:39:48,783 - watchfiles.main - INFO - 4 changes detected
+2025-11-08 10:39:48,892 - main - INFO - ✓ OpenAI API connection successful
+2025-11-08 10:40:02,020 - watchfiles.main - INFO - 1 change detected
+2025-11-08 10:40:02,136 - main - INFO - Shutting down R-Net AI Backend Service...
+2025-11-08 10:40:02,499 - watchfiles.main - INFO - 1 change detected
+2025-11-08 10:40:02,642 - middleware.security - WARNING - Generated default API key: rnet_dev_R9tq1yxWsNzwjtx7qNlZmmS3gdaewPdu-bVh5p5E_Vc
+2025-11-08 10:40:02,666 - main - INFO - Starting R-Net AI Backend Service...
+2025-11-08 10:40:02,865 - watchfiles.main - INFO - 1 change detected
+2025-11-08 10:40:03,122 - main - INFO - ✓ OpenAI API connection successful
+2025-11-08 10:40:05,356 - watchfiles.main - INFO - 1 change detected
+2025-11-08 10:40:05,550 - main - INFO - Shutting down R-Net AI Backend Service...
+2025-11-08 10:40:05,917 - watchfiles.main - INFO - 1 change detected
+2025-11-08 10:40:05,962 - middleware.security - WARNING - Generated default API key: rnet_dev_I3kiZFr95QWHvv2Kd0Zb5e76qwj6bLxaLe6B5b-olhw
+2025-11-08 10:40:05,979 - main - INFO - Starting R-Net AI Backend Service...
+2025-11-08 10:40:06,283 - watchfiles.main - INFO - 1 change detected
+2025-11-08 10:40:06,412 - main - INFO - ✓ OpenAI API connection successful
+2025-11-08 10:40:44,751 - services.syntax_validator - INFO - Validating syntax for 1 generated files
+2025-11-08 10:40:44,752 - services.syntax_validator - INFO - ✓ All 1 files passed syntax validation
+2025-11-08 10:40:44,754 - services.syntax_validator - INFO - Validating syntax for 1 generated files
+2025-11-08 10:40:44,755 - services.syntax_validator - ERROR - Syntax error in bad_test.py: Python syntax error at line 1: expected ':'
+2025-11-08 10:40:44,755 - services.syntax_validator - WARNING - ✗ 1 files have syntax errors out of 1 validated
+2025-11-08 10:40:44,758 - services.syntax_validator - INFO - Validating syntax for 1 generated files
+2025-11-08 10:40:44,758 - services.syntax_validator - INFO - ✓ All 1 files passed syntax validation
+2025-11-08 10:40:44,760 - services.syntax_validator - INFO - Validating syntax for 1 generated files
+2025-11-08 10:40:44,761 - services.syntax_validator - ERROR - Syntax error in bad_config.json: JSON syntax error at line 1: Expecting ':' delimiter
+2025-11-08 10:40:44,761 - services.syntax_validator - WARNING - ✗ 1 files have syntax errors out of 1 validated
+2025-11-08 10:40:44,762 - services.syntax_validator - INFO - Validating syntax for 1 generated files
+2025-11-08 10:40:44,762 - services.syntax_validator - INFO - ✓ All 1 files passed syntax validation
+2025-11-08 10:40:44,764 - main - ERROR - Unhandled exception: 429: {'error': 'Rate limit exceeded', 'message': 'Too many requests. Please try again in 2 seconds.', 'retry_after': 2}
+  + Exception Group Traceback (most recent call last):
+  |   File "/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/site-packages/starlette/_utils.py", line 79, in collapse_excgroups
+  |     yield
+  |   File "/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/site-packages/starlette/middleware/base.py", line 183, in __call__
+  |     async with anyio.create_task_group() as task_group:
+  |                ~~~~~~~~~~~~~~~~~~~~~~~^^
+  |   File "/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/site-packages/anyio/_backends/_asyncio.py", line 781, in __aexit__
+  |     raise BaseExceptionGroup(
+  |         "unhandled errors in a TaskGroup", self._exceptions
+  |     ) from None
+  | ExceptionGroup: unhandled errors in a TaskGroup (1 sub-exception)
+  +-+---------------- 1 ----------------
+    | Traceback (most recent call last):
+    |   File "/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/site-packages/starlette/middleware/errors.py", line 164, in __call__
+    |     await self.app(scope, receive, _send)
+    |   File "/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/site-packages/starlette/middleware/cors.py", line 85, in __call__
+    |     await self.app(scope, receive, send)
+    |   File "/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/site-packages/starlette/middleware/base.py", line 182, in __call__
+    |     with recv_stream, send_stream, collapse_excgroups():
+    |                                    ~~~~~~~~~~~~~~~~~~^^
+    |   File "/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/contextlib.py", line 162, in __exit__
+    |     self.gen.throw(value)
+    |     ~~~~~~~~~~~~~~^^^^^^^
+    |   File "/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/site-packages/starlette/_utils.py", line 85, in collapse_excgroups
+    |     raise exc
+    |   File "/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/site-packages/starlette/middleware/base.py", line 184, in __call__
+    |     response = await self.dispatch_func(request, call_next)
+    |                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    |   File "/Applications/Bản sao sources/R-Net-AI/r-net-backend/middleware/rate_limiter.py", line 137, in dispatch
+    |     raise HTTPException(
+    |     ...<7 lines>...
+    |     )
+    | fastapi.exceptions.HTTPException: 429: {'error': 'Rate limit exceeded', 'message': 'Too many requests. Please try again in 2 seconds.', 'retry_after': 2}
+    +------------------------------------
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/site-packages/starlette/middleware/errors.py", line 164, in __call__
+    await self.app(scope, receive, _send)
+  File "/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/site-packages/starlette/middleware/cors.py", line 85, in __call__
+    await self.app(scope, receive, send)
+  File "/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/site-packages/starlette/middleware/base.py", line 182, in __call__
+    with recv_stream, send_stream, collapse_excgroups():
+                                   ~~~~~~~~~~~~~~~~~~^^
+  File "/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/contextlib.py", line 162, in __exit__
+    self.gen.throw(value)
+    ~~~~~~~~~~~~~~^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/site-packages/starlette/_utils.py", line 85, in collapse_excgroups
+    raise exc
+  File "/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/site-packages/starlette/middleware/base.py", line 184, in __call__
+    response = await self.dispatch_func(request, call_next)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Applications/Bản sao sources/R-Net-AI/r-net-backend/middleware/rate_limiter.py", line 137, in dispatch
+    raise HTTPException(
+    ...<7 lines>...
+    )
+fastapi.exceptions.HTTPException: 429: {'error': 'Rate limit exceeded', 'message': 'Too many requests. Please try again in 2 seconds.', 'retry_after': 2}
+2025-11-08 10:41:03,652 - services.syntax_validator - INFO - Validating syntax for 1 generated files
+2025-11-08 10:41:03,652 - services.syntax_validator - INFO - ✓ All 1 files passed syntax validation
+2025-11-08 10:41:20,643 - watchfiles.main - INFO - 1 change detected
+2025-11-08 10:41:20,767 - main - INFO - Shutting down R-Net AI Backend Service...
+2025-11-08 10:41:21,139 - watchfiles.main - INFO - 1 change detected
+2025-11-08 10:41:21,309 - middleware.security - WARNING - Generated default API key: rnet_dev_yQYL8bCVt5ivh9uJmaPs1bgig3yYXeGoBiQa7_wOt6M
+2025-11-08 10:41:21,335 - main - INFO - Starting R-Net AI Backend Service...
+2025-11-08 10:41:21,501 - watchfiles.main - INFO - 1 change detected
+2025-11-08 10:41:21,851 - main - INFO - ✓ OpenAI API connection successful
+2025-11-08 10:41:35,474 - watchfiles.main - INFO - 1 change detected
+2025-11-08 10:41:35,599 - main - INFO - Shutting down R-Net AI Backend Service...
+2025-11-08 10:41:35,970 - watchfiles.main - INFO - 1 change detected
+2025-11-08 10:41:36,109 - middleware.security - WARNING - Generated default API key: rnet_dev_nMv9dAR8H5XMCyS-RUsk808jNez-s5cNMGtITzQPiko
+2025-11-08 10:41:36,133 - main - INFO - Starting R-Net AI Backend Service...
+2025-11-08 10:41:36,332 - watchfiles.main - INFO - 1 change detected
+2025-11-08 10:41:36,568 - main - INFO - ✓ OpenAI API connection successful
+2025-11-08 10:41:47,824 - watchfiles.main - INFO - 1 change detected
+2025-11-08 10:41:47,999 - main - INFO - Shutting down R-Net AI Backend Service...
+2025-11-08 10:41:48,380 - watchfiles.main - INFO - 1 change detected
+2025-11-08 10:41:48,566 - middleware.security - WARNING - Generated default API key: rnet_dev_aiQtFVzGqQNKXKLCbML9JrAUxnhbHz4Giqjdyoi2Geg
+2025-11-08 10:41:48,591 - main - INFO - Starting R-Net AI Backend Service...
+2025-11-08 10:41:48,741 - watchfiles.main - INFO - 1 change detected
+2025-11-08 10:41:49,081 - main - INFO - ✓ OpenAI API connection successful
+2025-11-08 10:43:43,077 - watchfiles.main - INFO - 1 change detected
+2025-11-08 10:43:43,267 - main - INFO - Shutting down R-Net AI Backend Service...
+2025-11-08 10:43:43,639 - watchfiles.main - INFO - 1 change detected
+2025-11-08 10:43:43,818 - middleware.security - WARNING - Generated default API key: rnet_dev_mNcabJxPe_b-jmbN0lZQ_PGpV7dTvIPdYHyZFWrcEoc
+2025-11-08 10:43:43,844 - main - INFO - Starting R-Net AI Backend Service...
+2025-11-08 10:43:44,005 - watchfiles.main - INFO - 1 change detected
+2025-11-08 10:43:44,368 - main - INFO - ✓ OpenAI API connection successful
+2025-11-08 10:43:54,377 - watchfiles.main - INFO - 1 change detected
+2025-11-08 10:43:54,482 - main - INFO - Shutting down R-Net AI Backend Service...
+2025-11-08 10:43:54,846 - watchfiles.main - INFO - 1 change detected
+2025-11-08 10:43:54,979 - middleware.security - WARNING - Generated default API key: rnet_dev_bC4Ibriydv7QOWfmpLXIo6wnXW0aQ8OPzI1FDnFaSco
+2025-11-08 10:43:55,003 - main - INFO - Starting R-Net AI Backend Service...
+2025-11-08 10:43:55,211 - watchfiles.main - INFO - 1 change detected
+2025-11-08 10:43:55,520 - main - INFO - ✓ OpenAI API connection successful
+2025-11-08 10:44:32,553 - watchfiles.main - INFO - 1 change detected
+2025-11-08 10:44:32,738 - main - INFO - Shutting down R-Net AI Backend Service...
+2025-11-08 10:44:33,112 - watchfiles.main - INFO - 1 change detected
+2025-11-08 10:44:33,269 - middleware.security - WARNING - Generated default API key: rnet_dev_j3uY2BEF56Hb8wf6-SLgSJdEhL88uNlNLGSthFyB6FI
+2025-11-08 10:44:33,292 - main - INFO - Starting R-Net AI Backend Service...
+2025-11-08 10:44:33,477 - watchfiles.main - INFO - 1 change detected
+2025-11-08 10:44:33,730 - main - INFO - ✓ OpenAI API connection successful
+2025-11-08 10:44:46,078 - watchfiles.main - INFO - 1 change detected
+2025-11-08 10:44:46,269 - main - INFO - Shutting down R-Net AI Backend Service...
+2025-11-08 10:44:46,639 - watchfiles.main - INFO - 1 change detected
+2025-11-08 10:44:46,767 - middleware.security - WARNING - Generated default API key: rnet_dev_z-dDNI6IquBhHwYlvhnwmexFq0vL5BUNp8F2PltaZx8
+2025-11-08 10:44:46,790 - main - INFO - Starting R-Net AI Backend Service...
+2025-11-08 10:44:47,003 - watchfiles.main - INFO - 1 change detected
+2025-11-08 10:44:47,284 - main - INFO - ✓ OpenAI API connection successful
+2025-11-08 10:45:03,227 - watchfiles.main - INFO - 1 change detected
+2025-11-08 10:45:03,354 - main - INFO - Shutting down R-Net AI Backend Service...
+2025-11-08 10:45:03,727 - watchfiles.main - INFO - 1 change detected
+2025-11-08 10:45:03,868 - middleware.security - WARNING - Generated default API key: rnet_dev_I6Ul6w1JanheFvdFjqXhh_jP_VRxhlSoXqFHzhqaiiw
+2025-11-08 10:45:03,893 - main - INFO - Starting R-Net AI Backend Service...
+2025-11-08 10:45:04,088 - watchfiles.main - INFO - 1 change detected
+2025-11-08 10:45:04,355 - main - INFO - ✓ OpenAI API connection successful
+2025-11-08 10:45:28,300 - watchfiles.main - INFO - 1 change detected
+2025-11-08 10:45:28,422 - main - INFO - Shutting down R-Net AI Backend Service...
+2025-11-08 10:45:28,788 - watchfiles.main - INFO - 1 change detected
+2025-11-08 10:45:28,925 - middleware.security - WARNING - Generated default API key: rnet_dev_SEqmZYAXH4zZGKejYd5RCzjgmi6XGoRU9RjOA4TTjvY
+2025-11-08 10:45:28,949 - main - INFO - Starting R-Net AI Backend Service...
+2025-11-08 10:45:29,148 - watchfiles.main - INFO - 1 change detected
+2025-11-08 10:45:29,434 - main - INFO - ✓ OpenAI API connection successful
+2025-11-08 10:45:42,298 - services.syntax_validator - INFO - Validating syntax for 1 generated files
+2025-11-08 10:45:42,299 - services.syntax_validator - INFO - ✓ All 1 files passed syntax validation
+2025-11-08 10:45:42,814 - services.syntax_validator - INFO - Validating syntax for 1 generated files
+2025-11-08 10:45:42,814 - services.syntax_validator - ERROR - Syntax error in bad_test.py: Python syntax error at line 1: expected ':'
+2025-11-08 10:45:42,814 - services.syntax_validator - WARNING - ✗ 1 files have syntax errors out of 1 validated
+2025-11-08 10:45:42,820 - services.syntax_validator - INFO - Validating syntax for 1 generated files
+2025-11-08 10:45:42,820 - services.syntax_validator - INFO - ✓ All 1 files passed syntax validation
+2025-11-08 10:45:43,330 - services.syntax_validator - INFO - Validating syntax for 1 generated files
+2025-11-08 10:45:43,330 - services.syntax_validator - ERROR - Syntax error in bad_config.json: JSON syntax error at line 1: Expecting ':' delimiter
+2025-11-08 10:45:43,331 - services.syntax_validator - WARNING - ✗ 1 files have syntax errors out of 1 validated
+2025-11-08 10:45:43,838 - services.syntax_validator - INFO - Validating syntax for 1 generated files
+2025-11-08 10:45:43,838 - services.syntax_validator - INFO - ✓ All 1 files passed syntax validation
+2025-11-08 10:45:44,351 - services.syntax_validator - INFO - Validating syntax for 1 generated files
+2025-11-08 10:45:44,351 - services.syntax_validator - ERROR - Syntax error in bad_app.js: Unclosed '{' at line 1
+2025-11-08 10:45:44,351 - services.syntax_validator - WARNING - ✗ 1 files have syntax errors out of 1 validated
+2025-11-08 10:45:44,865 - main - ERROR - Unhandled exception: 429: {'error': 'Rate limit exceeded', 'message': 'Too many requests. Please try again in 2 seconds.', 'retry_after': 2}
+  + Exception Group Traceback (most recent call last):
+  |   File "/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/site-packages/starlette/_utils.py", line 79, in collapse_excgroups
+  |     yield
+  |   File "/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/site-packages/starlette/middleware/base.py", line 183, in __call__
+  |     async with anyio.create_task_group() as task_group:
+  |                ~~~~~~~~~~~~~~~~~~~~~~~^^
+  |   File "/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/site-packages/anyio/_backends/_asyncio.py", line 781, in __aexit__
+  |     raise BaseExceptionGroup(
+  |         "unhandled errors in a TaskGroup", self._exceptions
+  |     ) from None
+  | ExceptionGroup: unhandled errors in a TaskGroup (1 sub-exception)
+  +-+---------------- 1 ----------------
+    | Traceback (most recent call last):
+    |   File "/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/site-packages/starlette/middleware/errors.py", line 164, in __call__
+    |     await self.app(scope, receive, _send)
+    |   File "/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/site-packages/starlette/middleware/cors.py", line 85, in __call__
+    |     await self.app(scope, receive, send)
+    |   File "/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/site-packages/starlette/middleware/base.py", line 182, in __call__
+    |     with recv_stream, send_stream, collapse_excgroups():
+    |                                    ~~~~~~~~~~~~~~~~~~^^
+    |   File "/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/contextlib.py", line 162, in __exit__
+    |     self.gen.throw(value)
+    |     ~~~~~~~~~~~~~~^^^^^^^
+    |   File "/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/site-packages/starlette/_utils.py", line 85, in collapse_excgroups
+    |     raise exc
+    |   File "/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/site-packages/starlette/middleware/base.py", line 184, in __call__
+    |     response = await self.dispatch_func(request, call_next)
+    |                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    |   File "/Applications/Bản sao sources/R-Net-AI/r-net-backend/middleware/rate_limiter.py", line 137, in dispatch
+    |     raise HTTPException(
+    |     ...<7 lines>...
+    |     )
+    | fastapi.exceptions.HTTPException: 429: {'error': 'Rate limit exceeded', 'message': 'Too many requests. Please try again in 2 seconds.', 'retry_after': 2}
+    +------------------------------------
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/site-packages/starlette/middleware/errors.py", line 164, in __call__
+    await self.app(scope, receive, _send)
+  File "/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/site-packages/starlette/middleware/cors.py", line 85, in __call__
+    await self.app(scope, receive, send)
+  File "/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/site-packages/starlette/middleware/base.py", line 182, in __call__
+    with recv_stream, send_stream, collapse_excgroups():
+                                   ~~~~~~~~~~~~~~~~~~^^
+  File "/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/contextlib.py", line 162, in __exit__
+    self.gen.throw(value)
+    ~~~~~~~~~~~~~~^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/site-packages/starlette/_utils.py", line 85, in collapse_excgroups
+    raise exc
+  File "/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/site-packages/starlette/middleware/base.py", line 184, in __call__
+    response = await self.dispatch_func(request, call_next)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Applications/Bản sao sources/R-Net-AI/r-net-backend/middleware/rate_limiter.py", line 137, in dispatch
+    raise HTTPException(
+    ...<7 lines>...
+    )
+fastapi.exceptions.HTTPException: 429: {'error': 'Rate limit exceeded', 'message': 'Too many requests. Please try again in 2 seconds.', 'retry_after': 2}
+2025-11-08 10:46:50,919 - watchfiles.main - INFO - 1 change detected
+2025-11-08 10:46:51,047 - main - INFO - Shutting down R-Net AI Backend Service...
+2025-11-08 10:46:51,419 - watchfiles.main - INFO - 1 change detected
+2025-11-08 10:46:51,610 - middleware.security - WARNING - Generated default API key: rnet_dev__0S9vVkV5aZUUejulqiMiL0Pw8OFG0h2iw8YtBr_XcY
+2025-11-08 10:46:51,636 - main - INFO - Starting R-Net AI Backend Service...
+2025-11-08 10:46:51,779 - watchfiles.main - INFO - 1 change detected
+2025-11-08 10:46:52,141 - main - INFO - ✓ OpenAI API connection successful
+2025-11-08 10:47:10,387 - watchfiles.main - INFO - 1 change detected
+2025-11-08 10:47:59,494 - watchfiles.main - INFO - 1 change detected
+2025-11-08 10:48:29,611 - watchfiles.main - INFO - 1 change detected
+2025-11-08 10:48:29,816 - main - INFO - Shutting down R-Net AI Backend Service...
+2025-11-08 10:48:30,189 - watchfiles.main - INFO - 1 change detected
+2025-11-08 10:48:30,371 - middleware.security - WARNING - Generated default API key: rnet_dev_4GPG4wKIU84cfFC0eqffOYXAAPE9JkcuPGNNSO8P_40
+2025-11-08 10:48:30,560 - watchfiles.main - INFO - 1 change detected
+2025-11-08 10:48:39,499 - watchfiles.main - INFO - 1 change detected
+2025-11-08 10:48:39,997 - middleware.security - WARNING - Generated default API key: rnet_dev_TGEsTWUhwIxF2EPsT59IYOKs8kLT7ELZi1JwxIUIDqk
+2025-11-08 10:48:40,033 - main - INFO - Starting R-Net AI Backend Service...
+2025-11-08 10:48:40,132 - watchfiles.main - INFO - 4 changes detected
+2025-11-08 10:48:40,560 - main - INFO - ✓ OpenAI API connection successful
+2025-11-08 10:49:01,744 - watchfiles.main - INFO - 1 change detected
+2025-11-08 10:49:01,897 - main - INFO - Shutting down R-Net AI Backend Service...
+2025-11-08 10:49:02,268 - watchfiles.main - INFO - 1 change detected
+2025-11-08 10:49:02,397 - middleware.security - WARNING - Generated default API key: rnet_dev_iWo9P4o1Iyd0q7lAZPMno3DmnCAQhXCVOeHo6ass6zI
+2025-11-08 10:49:02,421 - main - INFO - Starting R-Net AI Backend Service...
+2025-11-08 10:49:02,631 - watchfiles.main - INFO - 4 changes detected
+2025-11-08 10:49:02,858 - main - INFO - ✓ OpenAI API connection successful
+2025-11-08 10:49:17,304 - middleware.security - WARNING - Generated default API key: rnet_dev_7VL5k6ey8BrJUvDjdEZQUdIF24p6Ydpp3V6SlyRzrAw
+2025-11-08 10:49:17,688 - middleware.security - WARNING - Generated default API key: rnet_dev_Tkf7eRkhW3bpMGxq8_SuHZTjUSeWMu71GympvKuprA8
+2025-11-08 10:49:17,713 - main - INFO - Starting R-Net AI Backend Service...
+2025-11-08 10:49:17,783 - watchfiles.main - INFO - 1 change detected
+2025-11-08 10:49:18,145 - main - INFO - ✓ OpenAI API connection successful
+2025-11-08 10:49:37,041 - services.syntax_validator - INFO - Validating syntax for 1 generated files
+2025-11-08 10:49:37,041 - services.syntax_validator - INFO - ✓ All 1 files passed syntax validation
+2025-11-08 10:49:37,063 - services.syntax_validator - INFO - Validating syntax for 1 generated files
+2025-11-08 10:49:37,063 - services.syntax_validator - INFO - ✓ All 1 files passed syntax validation
+2025-11-08 10:49:37,085 - services.syntax_validator - INFO - Validating syntax for 1 generated files
+2025-11-08 10:49:37,085 - services.syntax_validator - INFO - ✓ All 1 files passed syntax validation
+2025-11-08 10:49:37,108 - services.syntax_validator - INFO - Validating syntax for 1 generated files
+2025-11-08 10:49:37,109 - services.syntax_validator - INFO - ✓ All 1 files passed syntax validation
+2025-11-08 10:49:37,132 - services.syntax_validator - INFO - Validating syntax for 1 generated files
+2025-11-08 10:49:37,133 - services.syntax_validator - INFO - ✓ All 1 files passed syntax validation
+2025-11-08 10:49:37,155 - services.syntax_validator - INFO - Validating syntax for 1 generated files
+2025-11-08 10:49:37,155 - services.syntax_validator - INFO - ✓ All 1 files passed syntax validation
+2025-11-08 10:49:37,178 - services.syntax_validator - INFO - Validating syntax for 1 generated files
+2025-11-08 10:49:37,178 - services.syntax_validator - INFO - ✓ All 1 files passed syntax validation
+2025-11-08 10:49:37,200 - services.syntax_validator - INFO - Validating syntax for 1 generated files
+2025-11-08 10:49:37,200 - services.syntax_validator - INFO - ✓ All 1 files passed syntax validation
+2025-11-08 10:49:37,222 - services.syntax_validator - INFO - Validating syntax for 1 generated files
+2025-11-08 10:49:37,222 - services.syntax_validator - INFO - ✓ All 1 files passed syntax validation
+2025-11-08 10:49:37,244 - services.syntax_validator - INFO - Validating syntax for 1 generated files
+2025-11-08 10:49:37,244 - services.syntax_validator - INFO - ✓ All 1 files passed syntax validation
+2025-11-08 10:49:55,152 - watchfiles.main - INFO - 1 change detected
+2025-11-08 10:49:55,260 - main - INFO - Shutting down R-Net AI Backend Service...
+2025-11-08 10:49:55,639 - watchfiles.main - INFO - 1 change detected
+2025-11-08 10:49:55,775 - middleware.security - WARNING - Generated default API key: rnet_dev_0oXLlyFYiMoELxTvGKha76CGeoaCfd7haVwjETN0w-o
+2025-11-08 10:49:55,800 - main - INFO - Starting R-Net AI Backend Service...
+2025-11-08 10:49:55,998 - watchfiles.main - INFO - 4 changes detected
+2025-11-08 10:49:56,291 - main - INFO - ✓ OpenAI API connection successful
+2025-11-08 10:51:41,574 - main - INFO - Code generation request for project: student-management-generate-th
+2025-11-08 10:51:41,575 - main - INFO - Tech stack: frontend=<TechStackOptions.REACT: 'React'> backend=<TechStackOptions.FASTAPI: 'FastAPI'> database=<TechStackOptions.POSTGRESQL: 'PostgreSQL'>
+2025-11-08 10:51:41,576 - main - INFO - Description length: 247 characters
+2025-11-08 10:51:41,577 - services.openai_service - INFO - Starting code generation for project: student-management-generate-th
+2025-11-08 10:51:41,830 - services.openai_service - INFO - Image processed successfully
+2025-11-08 10:51:41,830 - services.openai_service - INFO - Sending request to OpenAI API
+2025-11-08 10:52:35,485 - services.openai_service - INFO - OpenAI API response received, parsing content
+2025-11-08 10:52:35,488 - services.openai_service - INFO - Code generation completed successfully - 19 files generated
+2025-11-08 10:52:35,488 - main - INFO - Validating syntax of generated files...
+2025-11-08 10:52:35,488 - services.syntax_validator - INFO - Validating syntax for 19 generated files
+2025-11-08 10:52:35,492 - services.syntax_validator - ERROR - Syntax error in frontend/tailwind.config.js: Unclosed '[' at line 2
+2025-11-08 10:52:35,493 - services.syntax_validator - WARNING - ✗ 1 files have syntax errors out of 11 validated
+2025-11-08 10:52:35,493 - main - WARNING - Syntax validation found 1 errors
+2025-11-08 10:52:35,493 - main - WARNING -   - frontend/tailwind.config.js: Unclosed '[' at line 2
+2025-11-08 10:52:35,494 - main - INFO - Code generation completed successfully - 19 files generated, 11 validated

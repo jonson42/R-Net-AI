@@ -29,9 +29,26 @@ class Settings(BaseSettings):
     log_level: str = os.getenv("LOG_LEVEL", "INFO")
     log_file: str = os.getenv("LOG_FILE", "./logs/app.log")
     
+    # Rate Limiting
+    rate_limit_enabled: bool = os.getenv("RATE_LIMIT_ENABLED", "True").lower() == "true"
+    rate_limit_per_minute: int = int(os.getenv("RATE_LIMIT_PER_MINUTE", "5"))
+    
+    # Caching
+    cache_enabled: bool = os.getenv("CACHE_ENABLED", "True").lower() == "true"
+    cache_ttl_seconds: int = int(os.getenv("CACHE_TTL_SECONDS", "3600"))
+    cache_max_size: int = int(os.getenv("CACHE_MAX_SIZE", "100"))
+    
+    # Security
+    require_api_key: bool = os.getenv("REQUIRE_API_KEY", "False").lower() == "true"
+    api_keys: str = os.getenv("API_KEYS", "")  # Comma-separated list
+    
     @property
     def allowed_extensions_list(self) -> list:
         return [ext.strip().lower() for ext in self.allowed_extensions.split(",")]
+    
+    @property
+    def api_keys_list(self) -> list:
+        return [key.strip() for key in self.api_keys.split(",") if key.strip()]
     
     class Config:
         env_file = ".env"

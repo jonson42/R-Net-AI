@@ -1,0 +1,9 @@
+{
+  "name": "test-extension-commands",
+  "version": "1.0.0",
+  "description": "Test script to verify extension commands",
+  "main": "test.js",
+  "scripts": {
+    "test": "node test.js"
+  }
+}

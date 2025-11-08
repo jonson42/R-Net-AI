@@ -9,6 +9,7 @@ from openai import OpenAI
 
 from config import settings
 from models import TechStack, GeneratedFile
+from services.prompt_builder import StepByStepPromptBuilder, QuickPromptBuilder
 
 logger = logging.getLogger(__name__)
 
@@ -83,11 +84,21 @@ class OpenAIService:
             processed_image = self._validate_and_process_image(image_data)
             logger.info("Image processed successfully")
             
-            # Create system prompt
-            system_prompt = self._create_system_prompt(tech_stack, project_name)
+            # Create prompts using modular step-by-step builder
+            # Extract features from description if possible
+            features = []
+            if "features:" in description.lower():
+                # Extract features after "features:" marker
+                features_text = description.split("features:", 1)[1].split("\n")
+                features = [f.strip("- •*").strip() for f in features_text if f.strip()]
             
-            # Create user prompt
-            user_prompt = self._create_user_prompt(description, tech_stack)
+            # Use full-featured builder for comprehensive generation
+            system_prompt, user_prompt = QuickPromptBuilder.full_featured(
+                tech_stack=tech_stack,
+                project_name=project_name,
+                description=description,
+                features=features if features else []
+            )
             
             logger.info("Sending request to OpenAI API")
             
