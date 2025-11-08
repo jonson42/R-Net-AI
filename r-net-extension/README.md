@@ -1,4 +1,4 @@
-# AI Full-Stack Generator (GHC) - VS Code Extension
+# AI Full-Stack Generator (7GA) - VS Code Extension
 
 [![Version](https://img.shields.io/badge/version-1.0.0-blue.svg)](https://github.com/jonson42/R-Net-AI)
 [![License](https://img.shields.io/badge/license-MIT-green.svg)](https://opensource.org/licenses/MIT)
