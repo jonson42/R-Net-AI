@@ -1,10 +1,12 @@
 """
 Modular Prompt Builder with Step-by-Step Logic
 Breaks down complex prompts into manageable, composable sections
+Now with technology-specific template integration
 """
 
 from typing import Dict, List, Optional
 from models import TechStack
+from services.tech_specific_templates import TechSpecificTemplates
 
 
 class PromptSection:
@@ -148,72 +150,33 @@ REQUIRED UI COMPONENTS (All fully styled):
 
 
 class FrameworkSpecificBuilder:
-    """Builds framework-specific requirements"""
-    
-    @staticmethod
-    def build_react() -> str:
-        """React-specific requirements"""
-        return """• Use TypeScript with strict mode
-• Functional components with hooks (useState, useEffect, useContext)
-• React Query for data fetching (@tanstack/react-query)
-• React Router v6 for navigation
-• Context API or Zustand for state management
-• Custom hooks for reusable logic
-• Proper component composition and prop drilling prevention
-• Memoization (React.memo, useMemo, useCallback) where needed"""
-    
-    @staticmethod
-    def build_vue() -> str:
-        """Vue-specific requirements"""
-        return """• Use Vue 3 Composition API with <script setup>
-• TypeScript with defineProps and defineEmits
-• Pinia for state management
-• Vue Router for navigation
-• Composables for reusable logic
-• Proper reactivity with ref, reactive, computed"""
-    
-    @staticmethod
-    def build_fastapi() -> str:
-        """FastAPI-specific requirements"""
-        return """• Type hints for all functions
-• Pydantic models for request/response validation
-• Dependency injection for database sessions
-• SQLAlchemy 2.0+ with async support
-• Alembic for database migrations
-• Structured logging with context
-• CORS middleware configuration
-• JWT authentication with FastAPI security utilities"""
-    
-    @staticmethod
-    def build_express() -> str:
-        """Express-specific requirements"""
-        return """• TypeScript with strict mode
-• Express async error handling
-• Helmet for security headers
-• Morgan for HTTP logging
-• Express-validator for input validation
-• Sequelize or Prisma ORM
-• JWT authentication with middleware"""
+    """Builds framework-specific requirements using tech-specific templates"""
     
     @staticmethod
     def build(tech_stack: TechStack) -> str:
-        """Build framework-specific requirements"""
-        content = f"Frontend ({tech_stack.frontend.value}):\n"
+        """
+        Build framework-specific requirements from templates
+        Uses TechSpecificTemplates for detailed, comprehensive instructions
+        """
+        # Get templates for selected technologies
+        frontend_template = TechSpecificTemplates.get_frontend_template(tech_stack.frontend.value)
+        backend_template = TechSpecificTemplates.get_backend_template(tech_stack.backend.value)
+        database_template = TechSpecificTemplates.get_database_template(tech_stack.database.value)
         
-        if "react" in tech_stack.frontend.value.lower():
-            content += FrameworkSpecificBuilder.build_react()
-        elif "vue" in tech_stack.frontend.value.lower():
-            content += FrameworkSpecificBuilder.build_vue()
+        # Assemble comprehensive requirements
+        content = f"FRONTEND ({tech_stack.frontend.value}):\n"
+        content += frontend_template.get('core_instructions', '')
+        content += "\n\n"
+        content += frontend_template.get('styling_requirements', '')
         
-        content += f"\n\nBackend ({tech_stack.backend.value}):\n"
+        content += f"\n\nBACKEND ({tech_stack.backend.value}):\n"
+        content += backend_template.get('core_instructions', '')
         
-        if "fastapi" in tech_stack.backend.value.lower():
-            content += FrameworkSpecificBuilder.build_fastapi()
-        elif "express" in tech_stack.backend.value.lower():
-            content += FrameworkSpecificBuilder.build_express()
+        content += f"\n\nDATABASE ({tech_stack.database.value}):\n"
+        content += database_template.get('connection_example', '')
         
         return PromptSection.format_section(
-            "FRAMEWORK-SPECIFIC BEST PRACTICES", 
+            "TECHNOLOGY-SPECIFIC REQUIREMENTS (FROM TEMPLATES)", 
             content
         )
 
@@ -444,5 +407,48 @@ class QuickPromptBuilder:
             features=features,
             styling_emphasis=True
         )
+        
+        return system_prompt, user_prompt
+    
+    @staticmethod
+    def tech_template_based(
+        tech_stack: TechStack,
+        project_name: str,
+        description: str
+    ) -> tuple[str, str]:
+        """
+        Build prompts using technology-specific templates
+        This method provides the most comprehensive, framework-specific guidance
+        
+        Returns: (system_prompt, user_prompt)
+        """
+        
+        # Use the tech-specific template builder for complete prompts
+        complete_prompt = TechSpecificTemplates.build_complete_prompt(
+            tech_stack=tech_stack,
+            description=description,
+            project_name=project_name
+        )
+        
+        # For tech-template-based approach, we combine everything into system prompt
+        system_prompt = f"""You are a world-class senior full-stack architect and developer with 15+ years of experience.
+Your expertise spans modern web technologies, security best practices, and clean architecture.
+
+{complete_prompt}
+
+CRITICAL: Follow ALL technology-specific requirements exactly as specified above.
+Every framework has specific patterns that must be followed for production-quality code.
+"""
+        
+        # Simple user prompt since all details are in system prompt
+        user_prompt = f"""Generate a complete, production-ready application based on the requirements above.
+
+Project: {project_name}
+Stack: {tech_stack.frontend.value} + {tech_stack.backend.value} + {tech_stack.database.value}
+
+Description: {description}
+
+Return complete code following the exact patterns and structures specified in the system prompt.
+"""
         
         return system_prompt, user_prompt

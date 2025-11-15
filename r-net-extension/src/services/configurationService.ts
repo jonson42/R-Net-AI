@@ -8,6 +8,7 @@ export interface ExtensionConfig {
     generation: {
         autoOpen: boolean;
         createFolder: boolean;
+        useChainedPrompts: boolean;
     };
     ui: {
         theme: 'auto' | 'light' | 'dark';
@@ -26,11 +27,12 @@ export class ConfigurationService {
         return {
             backend: {
                 url: config.get('backend.url', 'http://127.0.0.1:8000'),
-                timeout: config.get('backend.timeout', 60000)
+                timeout: config.get('backend.timeout', 0) // 0 = unlimited timeout
             },
             generation: {
                 autoOpen: config.get('generation.autoOpen', true),
-                createFolder: config.get('generation.createFolder', true)
+                createFolder: config.get('generation.createFolder', true),
+                useChainedPrompts: config.get('generation.useChainedPrompts', true)
             },
             ui: {
                 theme: config.get('ui.theme', 'auto') as 'auto' | 'light' | 'dark'

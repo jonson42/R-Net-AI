@@ -105,7 +105,7 @@
     <!-- 3. Tech Stack Selection -->
     <div class="bg-gray-800 p-6 rounded-lg shadow-xl space-y-4">
         <h2 class="text-xl font-semibold mb-3 border-b border-gray-700 pb-2">3. Technology Stack</h2>
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-4">
             <!-- Frontend -->
             <div>
                 <label class="block text-sm font-medium mb-1">Frontend</label>
@@ -132,6 +132,17 @@
                     <option value="MySQL">MySQL (SQL)</option>
                     <option value="MongoDB">MongoDB (JSON Schema)</option>
                 </select>
+            </div>
+            <!-- Architecture -->
+            <div>
+                <label class="block text-sm font-medium mb-1">Architecture</label>
+                <select id="arch-select" class="input-style appearance-none">
+                    <option value="monolithic" selected>🏗️ Monolithic (Single Folder)</option>
+                    <option value="microservices">🔧 Microservices (Separate Folders)</option>
+                </select>
+                <p class="text-xs text-gray-500 mt-1">
+                    <span id="arch-description">Single unified structure: src/server + src/client</span>
+                </p>
             </div>
         </div>
     </div>
@@ -161,10 +172,21 @@
     const feSelect = document.getElementById('fe-select');
     const beSelect = document.getElementById('be-select');
     const dbSelect = document.getElementById('db-select');
+    const archSelect = document.getElementById('arch-select');
+    const archDescription = document.getElementById('arch-description');
     const generateButton = document.getElementById('generate-button');
     const statusArea = document.getElementById('status-area');
     
     let base64Image = null; // Holds the Base64 string of the uploaded image
+    
+    // Update architecture description when selection changes
+    archSelect.addEventListener('change', () => {
+        if (archSelect.value === 'monolithic') {
+            archDescription.textContent = 'Single unified structure: src/server + src/client';
+        } else {
+            archDescription.textContent = 'Separate folders: backend/ and frontend/';
+        }
+    });
 
     // --- Utility Functions ---
 
@@ -284,7 +306,8 @@
             tech_stack: {
                 frontend: feSelect.value,
                 backend: beSelect.value,
-                database: dbSelect.value
+                database: dbSelect.value,
+                architecture: archSelect.value // 'monolithic' or 'microservices'
             },
             project_name: projectName
         };

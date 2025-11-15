@@ -9,6 +9,7 @@ export interface GenerationRequest {
         frontend: string;
         backend: string;
         database: string;
+        architecture?: 'monolithic' | 'microservices'; // Default: 'monolithic'
     };
     project_name?: string;
 }
@@ -50,7 +51,7 @@ export class ApiService {
         
         this.client = axios.create({
             baseURL: config.backend.url,
-            timeout: config.backend.timeout,
+            timeout: 0, // 0 = No timeout (unlimited) for long-running chained generation
             headers: {
                 'Content-Type': 'application/json'
             }
@@ -146,11 +147,11 @@ export class ApiService {
     }
     
     /**
-     * Generate code using the backend service
+     * Generate code using the backend service (single prompt - fast)
      */
     async generateCode(request: GenerationRequest): Promise<GenerationResponse> {
         try {
-            console.log('=== STARTING CODE GENERATION ===');
+            console.log('=== STARTING CODE GENERATION (SINGLE PROMPT) ===');
             console.log('Request details:', {
                 project_name: request.project_name,
                 description_length: request.description.length,
@@ -172,6 +173,42 @@ export class ApiService {
             return response.data;
         } catch (error) {
             throw this.handleError(error, 'Code generation failed');
+        }
+    }
+    
+    /**
+     * Generate code using chained prompts (multi-step - high quality)
+     */
+    async generateCodeChained(request: GenerationRequest): Promise<GenerationResponse> {
+        try {
+            console.log('=== STARTING CHAINED CODE GENERATION ===');
+            console.log('Request details:', {
+                project_name: request.project_name,
+                description_length: request.description.length,
+                has_image: !!request.image_data,
+                tech_stack: request.tech_stack
+            });
+            console.log('Using multi-step approach (5 steps):');
+            console.log('  Step 1: Analyze architecture');
+            console.log('  Step 2: Generate database schema');
+            console.log('  Step 3: Generate backend API');
+            console.log('  Step 4: Generate frontend components');
+            console.log('  Step 5: Generate configurations');
+            
+            const startTime = Date.now();
+            const response = await this.client.post<GenerationResponse>('/generate/chained', request);
+            const duration = Date.now() - startTime;
+            
+            console.log(`=== CHAINED CODE GENERATION COMPLETED (${duration}ms) ===`);
+            console.log('Response summary:', {
+                success: response.data.success,
+                files_count: response.data.files?.length || 0,
+                message: response.data.message
+            });
+            
+            return response.data;
+        } catch (error) {
+            throw this.handleError(error, 'Chained code generation failed');
         }
     }
     

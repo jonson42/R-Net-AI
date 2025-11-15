@@ -52,8 +52,8 @@
         },
         "rnet-ai.backend.timeout": {
           "type": "number",
-          "default": 60000,
-          "description": "Request timeout in milliseconds"
+          "default": 0,
+          "description": "Request timeout in milliseconds (0 = unlimited/no timeout, recommended for multi-phase chained generation)"
         },
         "rnet-ai.generation.autoOpen": {
           "type": "boolean",
@@ -64,6 +64,11 @@
           "type": "boolean",
           "default": true,
           "description": "Create project folder for generated files"
+        },
+        "rnet-ai.generation.useChainedPrompts": {
+          "type": "boolean",
+          "default": true,
+          "description": "Use chained multi-step generation for higher quality code (5 progressive steps: architecture → database → backend → frontend → configs). Produces 20-30 files vs 10-15 with single-shot generation. Disable for faster but more generic output."
         },
         "rnet-ai.ui.theme": {
           "type": "string",

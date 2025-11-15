@@ -30,6 +30,33 @@ class OpenAIService:
             logger.error(f"OpenAI connection test failed: {e}")
             return False
     
+    async def preview_prompts(
+        self,
+        description: str,
+        tech_stack: TechStack,
+        project_name: str = "generated-app"
+    ) -> tuple[str, str]:
+        """
+        Generate and return the prompts without calling OpenAI.
+        This allows users to review and edit the prompts before generation.
+        Uses tech-specific templates for accurate preview.
+        """
+        try:
+            # Generate prompts using tech-template-based approach (same as generate_code)
+            logger.info(f"Generating prompt preview for: {tech_stack.frontend.value} + {tech_stack.backend.value} + {tech_stack.database.value}")
+            
+            system_prompt, user_prompt = QuickPromptBuilder.tech_template_based(
+                tech_stack=tech_stack,
+                project_name=project_name,
+                description=description
+            )
+            
+            return system_prompt, user_prompt
+            
+        except Exception as e:
+            logger.error(f"Prompt preview failed: {e}")
+            raise ValueError(f"Failed to generate prompt preview: {str(e)}")
+    
     def _validate_and_process_image(self, image_data: str) -> str:
         """Validate and process base64 image data"""
         try:
@@ -68,7 +95,8 @@ class OpenAIService:
         image_data: str, 
         description: str, 
         tech_stack: TechStack,
-        project_name: str = "generated-app"
+        project_name: str = "generated-app",
+        custom_prompt: Optional[str] = None
     ) -> Dict:
         """Generate full-stack code using OpenAI Vision API"""
         try:
@@ -84,21 +112,21 @@ class OpenAIService:
             processed_image = self._validate_and_process_image(image_data)
             logger.info("Image processed successfully")
             
-            # Create prompts using modular step-by-step builder
-            # Extract features from description if possible
-            features = []
-            if "features:" in description.lower():
-                # Extract features after "features:" marker
-                features_text = description.split("features:", 1)[1].split("\n")
-                features = [f.strip("- •*").strip() for f in features_text if f.strip()]
-            
-            # Use full-featured builder for comprehensive generation
-            system_prompt, user_prompt = QuickPromptBuilder.full_featured(
-                tech_stack=tech_stack,
-                project_name=project_name,
-                description=description,
-                features=features if features else []
-            )
+            # Use custom prompt if provided, otherwise generate tech-specific prompt
+            if custom_prompt:
+                logger.info("Using custom prompt provided by user")
+                system_prompt = custom_prompt
+                user_prompt = description
+            else:
+                # Use tech-template-based builder for most comprehensive, framework-specific guidance
+                # This automatically selects the right templates based on tech_stack choices
+                logger.info(f"Building tech-specific prompts for: {tech_stack.frontend.value} + {tech_stack.backend.value} + {tech_stack.database.value}")
+                
+                system_prompt, user_prompt = QuickPromptBuilder.tech_template_based(
+                    tech_stack=tech_stack,
+                    project_name=project_name,
+                    description=description
+                )
             
             # Log the final prompts for checking
             logger.info("=" * 80)
@@ -144,8 +172,7 @@ class OpenAIService:
                                 ]
                             }
                         ],
-                        max_tokens=settings.max_tokens,
-                        temperature=settings.temperature
+                        temperature=0.4
                     )
                     break
                     

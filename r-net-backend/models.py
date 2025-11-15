@@ -26,10 +26,20 @@ class TechStackOptions(str, Enum):
     REDIS = "Redis"
 
 
+class ArchitectureType(str, Enum):
+    """Architecture pattern for project structure"""
+    MONOLITHIC = "monolithic"  # Single unified folder structure (e.g., Next.js, Django, ASP.NET MVC)
+    MICROSERVICES = "microservices"  # Separate backend/ and frontend/ folders
+
+
 class TechStack(BaseModel):
     frontend: TechStackOptions = Field(..., description="Frontend technology")
     backend: TechStackOptions = Field(..., description="Backend technology")
     database: TechStackOptions = Field(..., description="Database technology")
+    architecture: ArchitectureType = Field(
+        default=ArchitectureType.MONOLITHIC,
+        description="Architecture pattern: monolithic (single folder) or microservices (separate backend/frontend folders)"
+    )
 
 
 class CodeGenerationRequest(BaseModel):
@@ -37,6 +47,7 @@ class CodeGenerationRequest(BaseModel):
     description: str = Field(..., min_length=10, description="Detailed project description")
     tech_stack: TechStack = Field(..., description="Selected technology stack")
     project_name: Optional[str] = Field(default="generated-app", description="Project name")
+    custom_prompt: Optional[str] = Field(default=None, description="Optional custom prompt to override generated prompt")
     
     class Config:
         json_schema_extra = {
@@ -51,6 +62,18 @@ class CodeGenerationRequest(BaseModel):
                 "project_name": "task-manager"
             }
         }
+
+
+class PromptPreviewRequest(BaseModel):
+    description: str = Field(..., min_length=10, description="Detailed project description")
+    tech_stack: TechStack = Field(..., description="Selected technology stack")
+    project_name: Optional[str] = Field(default="generated-app", description="Project name")
+
+
+class PromptPreviewResponse(BaseModel):
+    system_prompt: str = Field(..., description="Generated system prompt")
+    user_prompt: str = Field(..., description="Generated user prompt")
+    message: str = Field(default="Prompt generated successfully. You can edit and use it in /generate endpoint.")
 
 
 class GeneratedFile(BaseModel):

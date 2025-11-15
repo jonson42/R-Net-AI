@@ -266,8 +266,11 @@ async function handleCodeGeneration(panel: vscode.WebviewPanel, message: any): P
 			text: 'Generating code with AI... This may take 15-45 seconds.'
 		});
 
-		// Call API service
-		const response = await apiService.generateCode(request);
+		// Call API service (use chained or single based on config)
+		const config = ConfigurationService.getConfiguration();
+		const response = config.generation.useChainedPrompts
+			? await apiService.generateCodeChained(request)
+			: await apiService.generateCode(request);
 
 		if (response.success) {
 			// Create project files

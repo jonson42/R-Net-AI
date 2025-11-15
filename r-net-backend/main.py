@@ -14,10 +14,13 @@ from models import (
     CodeGenerationResponse, 
     HealthResponse, 
     ErrorResponse,
-    GeneratedFile
+    GeneratedFile,
+    PromptPreviewRequest,
+    PromptPreviewResponse
 )
 from services.openai_service import openai_service
 from services.syntax_validator import syntax_validator
+from services.chained_generation_service import chained_generation_service
 
 # Import middleware
 from middleware.security import SecurityHeadersMiddleware, verify_api_key, sanitize_input, validate_base64_image
@@ -133,6 +136,43 @@ async def health_check():
         )
 
 
+@app.post("/prompt/preview", response_model=PromptPreviewResponse)
+async def preview_prompt(request: PromptPreviewRequest):
+    """
+    Preview the prompt that will be sent to OpenAI before generation.
+    This allows users to review and potentially edit the prompt.
+    """
+    try:
+        logger.info(f"Prompt preview request for project: {request.project_name}")
+        
+        # Sanitize description input
+        description = sanitize_input(request.description)
+        
+        # Generate the prompts
+        system_prompt, user_prompt = await openai_service.preview_prompts(
+            description=description,
+            tech_stack=request.tech_stack,
+            project_name=request.project_name
+        )
+        
+        logger.info("Prompt preview generated successfully")
+        
+        return PromptPreviewResponse(
+            system_prompt=system_prompt,
+            user_prompt=user_prompt,
+            message="Prompt generated successfully. You can edit these prompts and use them in the /generate endpoint with 'custom_prompt' field."
+        )
+        
+    except Exception as e:
+        logger.error(f"Prompt preview failed: {e}", exc_info=True)
+        raise AppException(
+            "Prompt preview failed",
+            ErrorCode.INTERNAL_ERROR,
+            500,
+            {"error": str(e)}
+        )
+
+
 @app.post("/generate", response_model=CodeGenerationResponse)
 async def generate_code(
     request: CodeGenerationRequest
@@ -186,7 +226,8 @@ async def generate_code(
                 image_data=request.image_data,
                 description=description,
                 tech_stack=request.tech_stack,
-                project_name=request.project_name
+                project_name=request.project_name,
+                custom_prompt=request.custom_prompt
             )
             
             # Record successful OpenAI call
@@ -292,6 +333,107 @@ async def validate_code(files: List[GeneratedFile]):
         )
 
 
+@app.post("/generate/chained", response_model=CodeGenerationResponse)
+async def generate_code_chained(request: CodeGenerationRequest):
+    """
+    Generate code using chained prompts strategy (multi-step approach)
+    
+    This endpoint breaks down code generation into 5 steps:
+    1. Analyze architecture
+    2. Generate database schema
+    3. Generate backend API (using database context)
+    4. Generate frontend (using backend API context)
+    5. Generate configs & deployment files
+    
+    Each step uses the output from previous steps as context, resulting in more
+    coherent and complete code generation.
+    
+    Better for: Complex applications, large projects
+    Trade-off: Takes longer but produces more integrated results
+    """
+    try:
+        logger.info(f"Chained code generation request for project: {request.project_name}")
+        
+        # Validate OpenAI API key
+        if not settings.openai_api_key:
+            raise AuthenticationException(
+                "OpenAI API key not configured",
+                ErrorCode.MISSING_API_KEY
+            )
+        
+        # Sanitize description input
+        description = sanitize_input(request.description)
+        
+        # Validate image data
+        if not validate_base64_image(request.image_data):
+            raise ValidationException(
+                "Invalid image format. Supported formats: png, jpg, jpeg, gif, webp",
+                ErrorCode.INVALID_IMAGE
+            )
+        
+        # Generate code using chained strategy
+        try:
+            result = await chained_generation_service.generate_code_chained(
+                image_data=request.image_data,
+                description=description,
+                tech_stack=request.tech_stack,
+                project_name=request.project_name
+            )
+            
+            # Record successful OpenAI calls (5 calls for 5 steps)
+            metrics.record_openai_call(success=True, tokens=10000, cost=0.20)
+            
+        except Exception as openai_error:
+            metrics.record_openai_call(success=False)
+            raise
+        
+        # Validate syntax of generated files
+        logger.info("Validating syntax of generated files...")
+        validation_result = syntax_validator.validate_files(result["files"])
+        
+        if not validation_result["valid"]:
+            logger.warning(f"Syntax validation found {len(validation_result['errors'])} errors")
+            for error in validation_result["errors"]:
+                logger.warning(f"  - {error['file']}: {error['error']}")
+            
+            result["setup_instructions"].insert(0, 
+                f"⚠️ Note: {len(validation_result['errors'])} files have syntax warnings. Review before running."
+            )
+        else:
+            logger.info(f"✓ All {validation_result['validated_files']} files passed syntax validation")
+            result["setup_instructions"].insert(0, 
+                f"✓ All generated files passed syntax validation ({validation_result['validated_files']} files checked)"
+            )
+        
+        # Create response
+        response = CodeGenerationResponse(
+            success=True,
+            message=f"Successfully generated {len(result['files'])} files for {request.project_name} using chained prompts "
+                   f"({validation_result['validated_files']} files validated)",
+            project_structure=result["project_structure"],
+            files=result["files"],
+            dependencies=result["dependencies"],
+            setup_instructions=result["setup_instructions"]
+        )
+        
+        logger.info(f"Chained code generation completed - {len(result['files'])} files generated")
+        return response
+        
+    except (ValidationException, AuthenticationException) as e:
+        raise
+    except ValueError as e:
+        logger.error(f"Validation error: {e}")
+        raise ValidationException(str(e), ErrorCode.INVALID_INPUT)
+    except Exception as e:
+        logger.error(f"Chained code generation failed: {e}", exc_info=True)
+        raise AppException(
+            "Code generation failed",
+            ErrorCode.GENERATION_FAILED,
+            500,
+            {"error": str(e) if settings.debug else None}
+        )
+
+
 @app.get("/")
 async def root():
     """Root endpoint"""
@@ -305,10 +447,17 @@ async def root():
         "features": [
             "Request caching",
             "Syntax validation",
+            "Prompt preview & editing",
             "Security headers",
             "Performance monitoring",
-            "Open API access"
-        ]
+            "Open API access",
+            "Chained prompt generation"
+        ],
+        "endpoints": {
+            "single_prompt": "/generate",
+            "chained_prompts": "/generate/chained",
+            "preview": "/prompt/preview"
+        }
     }
 
 
