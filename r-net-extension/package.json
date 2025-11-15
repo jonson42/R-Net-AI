@@ -1,6 +1,6 @@
 {
   "name": "ai-fullstack-generator",
-  "displayName": "AI Full-Stack Generator (GHC)",
+  "displayName": "AI Full-Stack Generator (7GA)",
   "description": "Generate full-stack application code from a sketch/image and a detailed prompt using AI.",
   "version": "1.0.0",
   "publisher": "YourName",

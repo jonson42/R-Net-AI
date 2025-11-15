@@ -46,7 +46,7 @@ const API_KEY = "YOUR_GEMINI_API_KEY"; // Placeholder for the actual key
  * @param context The extension context provided by VS Code.
  */
 function activate(context) {
-    console.log('AI Full-Stack Generator (GHC) is now active!');
+    console.log('AI Full-Stack Generator (7GA) is now active!');
     // Register the command that opens the Webview panel
     let disposable = vscode.commands.registerCommand('ghc.openGeneratorPanel', () => {
         createGeneratorPanel(context);

@@ -1,6 +1,13 @@
 dist
 node_modules
+
 r-net-extension/dist
 r-net-extension/node_modules
+r-net-extension/.vscode-test
 r-net-extension/package-lock.json
+
+r-net-backend/**/__pycache__
+r-net-backend/logs
+r-net-backend/venv
+
 *.vsix

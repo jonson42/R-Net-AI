@@ -59,16 +59,64 @@ class ApiService {
         });
         // Add request interceptor for logging
         this.client.interceptors.request.use((config) => {
-            // Log request for debugging
+            const timestamp = new Date().toISOString();
+            console.log(`[${timestamp}] API Request:`, {
+                method: config.method?.toUpperCase(),
+                url: `${config.baseURL}${config.url}`,
+                headers: config.headers,
+                dataSize: config.data ? JSON.stringify(config.data).length : 0
+            });
+            // Log to VS Code output if available
+            if (typeof vscode !== 'undefined') {
+                const outputChannel = vscode.window.createOutputChannel('R-Net AI API');
+                outputChannel.appendLine(`[${timestamp}] === API REQUEST ===`);
+                outputChannel.appendLine(`${config.method?.toUpperCase()} ${config.baseURL}${config.url}`);
+                outputChannel.appendLine(`Data size: ${config.data ? JSON.stringify(config.data).length : 0} bytes`);
+                outputChannel.show();
+            }
             return config;
         }, (error) => {
+            console.error('API Request Error:', error);
             return Promise.reject(error);
         });
         // Add response interceptor for logging
         this.client.interceptors.response.use((response) => {
-            // Log response for debugging
+            const timestamp = new Date().toISOString();
+            console.log(`[${timestamp}] API Response:`, {
+                status: response.status,
+                statusText: response.statusText,
+                dataSize: response.data ? JSON.stringify(response.data).length : 0,
+                duration: response.config.metadata?.duration || 'unknown'
+            });
+            // Log to VS Code output if available
+            if (typeof vscode !== 'undefined') {
+                const outputChannel = vscode.window.createOutputChannel('R-Net AI API');
+                outputChannel.appendLine(`[${timestamp}] === API RESPONSE ===`);
+                outputChannel.appendLine(`Status: ${response.status} ${response.statusText}`);
+                outputChannel.appendLine(`Response size: ${response.data ? JSON.stringify(response.data).length : 0} bytes`);
+                if (response.data?.success !== undefined) {
+                    outputChannel.appendLine(`Success: ${response.data.success}`);
+                    if (response.data.files) {
+                        outputChannel.appendLine(`Generated files: ${response.data.files.length}`);
+                    }
+                }
+                outputChannel.show();
+            }
             return response;
         }, (error) => {
+            const timestamp = new Date().toISOString();
+            console.error(`[${timestamp}] API Response Error:`, error);
+            // Log to VS Code output if available
+            if (typeof vscode !== 'undefined') {
+                const outputChannel = vscode.window.createOutputChannel('R-Net AI API');
+                outputChannel.appendLine(`[${timestamp}] === API ERROR ===`);
+                outputChannel.appendLine(`Error: ${error.message}`);
+                if (error.response) {
+                    outputChannel.appendLine(`Status: ${error.response.status}`);
+                    outputChannel.appendLine(`Data: ${JSON.stringify(error.response.data)}`);
+                }
+                outputChannel.show();
+            }
             return Promise.reject(error);
         });
     }
@@ -89,7 +137,22 @@ class ApiService {
      */
     async generateCode(request) {
         try {
+            console.log('=== STARTING CODE GENERATION ===');
+            console.log('Request details:', {
+                project_name: request.project_name,
+                description_length: request.description.length,
+                has_image: !!request.image_data,
+                tech_stack: request.tech_stack
+            });
+            const startTime = Date.now();
             const response = await this.client.post('/generate', request);
+            const duration = Date.now() - startTime;
+            console.log(`=== CODE GENERATION COMPLETED (${duration}ms) ===`);
+            console.log('Response summary:', {
+                success: response.data.success,
+                files_count: response.data.files?.length || 0,
+                message: response.data.message
+            });
             return response.data;
         }
         catch (error) {
@@ -101,13 +164,18 @@ class ApiService {
      */
     async testConnection() {
         try {
+            console.log('=== TESTING BACKEND CONNECTION ===');
             const health = await this.checkHealth();
-            return {
+            console.log('Health check result:', health);
+            const result = {
                 success: health.status === 'healthy',
                 error: health.status !== 'healthy' ? 'Backend service is not healthy' : undefined
             };
+            console.log('Connection test result:', result);
+            return result;
         }
         catch (error) {
+            console.error('Connection test failed:', error);
             return {
                 success: false,
                 error: error instanceof Error ? error.message : 'Unknown error'

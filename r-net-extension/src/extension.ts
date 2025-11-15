@@ -16,7 +16,7 @@ export function activate(context: vscode.ExtensionContext) {
 		// Create output channel for logging
 		outputChannel = vscode.window.createOutputChannel('R-Net AI');
 		outputChannel.appendLine('=== EXTENSION ACTIVATION STARTED ===');
-		outputChannel.appendLine('AI Full-Stack Generator (GHC) is now active!');
+		outputChannel.appendLine('AI Full-Stack Generator (7GA) is now active!');
 		outputChannel.show(); // Force show the output channel
 		
 		// Show activation message to user
